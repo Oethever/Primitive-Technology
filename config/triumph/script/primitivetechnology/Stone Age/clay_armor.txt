@@ -1,0 +1,18 @@
+setIcon(<ceramics:clay_chestplate>)
+
+setTitle("Basic protection")
+
+setDescription("You can protect yourself by putting together a few clay plates into a nice armor.")
+
+addParent("primitivetechnology:Stone Age/pottery")
+
+criteria = addCriteria("hasClayArmor", "minecraft:inventory_changed")
+
+criteria.addItem(<ceramics:clay_chestplate>)
+criteria.addItem(<ceramics:clay_helmet>)
+criteria.addItem(<ceramics:clay_leggings>)
+criteria.addItem(<ceramics:clay_boots>)
+
+setPos(182,-120)
+
+alwaysVisible()

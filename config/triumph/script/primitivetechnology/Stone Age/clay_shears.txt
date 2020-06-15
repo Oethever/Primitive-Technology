@@ -1,0 +1,15 @@
+setIcon(<ceramics:clay_shears>)
+
+setTitle("Cutty cut time")
+
+setDescription("The clay shears will allow you to harvest wool easily.")
+
+addParent("primitivetechnology:Stone Age/pottery")
+
+criteria = addCriteria("hasClayShears", "minecraft:inventory_changed")
+
+criteria.addItem(<ceramics:clay_shears>)
+
+setPos(182,-80)
+
+alwaysVisible()

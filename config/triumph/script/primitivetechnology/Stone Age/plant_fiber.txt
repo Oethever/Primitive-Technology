@@ -1,0 +1,15 @@
+setIcon(<notreepunching:grass_fiber>)
+
+setTitle("Stringy stuff")
+
+setDescription("Cut grass fiber with a flint knife. Sticks can be obtained by punching leaves.")
+
+addParent("primitivetechnology:Stone Age/flint")
+
+criteria = addCriteria("hasPlantFiber", "minecraft:inventory_changed")
+
+criteria.addItem(<notreepunching:grass_fiber>)
+
+setPos(80,0)
+
+alwaysVisible()

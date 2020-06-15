@@ -1,0 +1,15 @@
+setIcon(<notreepunching:flint_shard>)
+
+setTitle("Most basic tool")
+
+setDescription("Acquire flint shards by knapping flint on a hard surface.\nHint: craft flint from gravel.")
+
+addParent("primitivetechnology:Stone Age/root")
+
+criteria = addCriteria("hasFlintShard", "minecraft:inventory_changed")
+
+criteria.addItem(<notreepunching:flint_shard>)
+
+setPos(40,0)
+
+alwaysVisible()

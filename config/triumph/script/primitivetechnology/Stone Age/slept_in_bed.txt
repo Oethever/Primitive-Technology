@@ -1,0 +1,13 @@
+setIcon(<comforts:sleeping_bag>)
+
+setTitle("Good night!")
+
+setDescription("Use three Whool blocks to make a temporary bed, and sleep in it.")
+
+addParent("primitivetechnology:Stone Age/root")
+
+criteria = addCriteria("slept_in_bed", "minecraft:slept_in_bed")
+
+setPos(17,40)
+
+alwaysVisible()

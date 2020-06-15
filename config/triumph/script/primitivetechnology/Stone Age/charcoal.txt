@@ -1,0 +1,15 @@
+setIcon(<minecraft:coal>)
+
+setTitle("First source of energy")
+
+setDescription("Charcoal is made using a charcoal pit. Use any non-flammable block to make a pit, fill it with wood logs (craft using normal wood), and cover all exposed wood. Light the wood on fire and quickly cover it. You can harvest the charcoal when there is no longer smoke (it takes a while).")
+
+addParent("primitivetechnology:Stone Age/upgrade")
+
+criteria = addCriteria("hasCharcoal", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:coal>)
+
+setPos(200,0)
+
+alwaysVisible()

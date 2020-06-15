@@ -1,0 +1,15 @@
+setIcon(<minecraft:brick_block>)
+
+setTitle("Sturdy material")
+
+setDescription("Bricks are used in all sorts of constructions, and you will need a few blocks of them.")
+
+addParent("primitivetechnology:Stone Age/pottery")
+
+criteria = addCriteria("hasBricks", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:brick_block>)
+
+setPos(217,-100)
+
+alwaysVisible()

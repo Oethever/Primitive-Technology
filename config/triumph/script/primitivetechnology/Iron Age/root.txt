@@ -1,0 +1,16 @@
+setIcon(<tconstruct:pickaxe, nbt:{TinkerData:{Materials:["wood", "steel", "steel"]}}>)
+
+setTitle("Iron Age")
+
+setDescription("Welcome to the Iron Age!")
+
+setBackground("minecraft:textures/gui/advancements/backgrounds/adventure.png")
+
+setShowToast(false)
+
+setAnnounceToChat(false)
+
+setPos(0,0)
+
+//Adds a single location criteria. Since this has nothing specific set, it will be completed the instant the player is added to the world, thus unlocking the page instantly.
+addCriteria("location", "minecraft:location")

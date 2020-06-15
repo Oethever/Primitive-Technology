@@ -1,0 +1,15 @@
+setIcon(<charcoal_pit:ceramic_pot>)
+
+setTitle("Elegant storage")
+
+setDescription("Ceramic vessels are an elegant alternative to wooden chests, and can be died.")
+
+addParent("primitivetechnology:Stone Age/pottery")
+
+criteria = addCriteria("hasCeramicVessel", "minecraft:inventory_changed")
+
+criteria.addItem(<charcoal_pit:ceramic_pot>)
+
+setPos(182,-40)
+
+alwaysVisible()

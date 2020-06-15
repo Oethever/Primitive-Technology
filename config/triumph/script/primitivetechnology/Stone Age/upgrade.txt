@@ -1,0 +1,15 @@
+setIcon(<tconstruct:tooltables>)
+
+setTitle("Getting an upgrade")
+
+setDescription("You have everything you need to make a full tool workshop:\n* Crafting station\n* Tool Station\n* Stencil Table\n* Part Builder\n\nNote that the crafting station is the only way to craft with more than three ingredients.")
+
+addParent("primitivetechnology:Stone Age/wood")
+
+criteria = addCriteria("hasWorkshop", "minecraft:inventory_changed")
+
+criteria.addItem(<tconstruct:tooltables>)
+
+setPos(160,0)
+
+alwaysVisible()

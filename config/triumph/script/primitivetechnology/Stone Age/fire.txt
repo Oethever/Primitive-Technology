@@ -1,0 +1,15 @@
+setIcon(<notreepunching:fire_starter>)
+
+setTitle("Play with fire")
+
+setDescription("Using a fire starter, you can create a small campfire. For that, toss one wood log, three sticks and one piece of kindling (grass string or paper). Then aim at the items with the fire starter while holding right click. Once lit, quickly put your meat to cook, because the fire runs out fast!")
+
+addParent("primitivetechnology:Stone Age/wood")
+
+criteria = addCriteria("hasCharcoal", "minecraft:inventory_changed")
+
+criteria.addItem(<notreepunching:fire_starter>)
+
+setPos(138,40)
+
+alwaysVisible()

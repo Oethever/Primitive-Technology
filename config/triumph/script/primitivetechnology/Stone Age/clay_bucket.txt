@@ -1,0 +1,15 @@
+setIcon(<ceramics:clay_bucket>)
+
+setTitle("Fluid dynamics")
+
+setDescription("The clay bucket will allow you to move water around.")
+
+addParent("primitivetechnology:Stone Age/pottery")
+
+criteria = addCriteria("hasClayBucket", "minecraft:inventory_changed")
+
+criteria.addItem(<ceramics:clay_bucket>)
+
+setPos(217,-60)
+
+alwaysVisible()
