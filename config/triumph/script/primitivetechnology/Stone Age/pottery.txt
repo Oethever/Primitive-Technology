@@ -2,7 +2,7 @@ setIcon(<charcoal_pit:clay_pot>)
 
 setTitle("Harr, Pottery!")
 
-setDescription("You can make pottery using a small kiln:\n1. dig a hole in the ground\n2. Place your unfired pottery item in the hole while sneaking\n3. Add 6 straws and 3 wood logs\n4. Light on fire\n\nOnce the fire runs out, you will find your pottery in the ashes.")
+setDescription("You can make pottery using a small kiln:\n1. dig a hole in the ground\n2. Place your unfired pottery item in the hole while sneaking\n3. Add 6 plant fibers and 3 wood logs\n4. Light on fire\n\nOnce the fire runs out, you will find your pottery in the ashes.")
 
 addParent("primitivetechnology:Stone Age/wood")
 
