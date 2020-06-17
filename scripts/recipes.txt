@@ -1,0 +1,110 @@
+Crusher:
+* <ore:bone>: 6 * <minecraft:dye:15>
+* <ore:cobblestone>: <minecraft:gravel>
+* <ore:gravel>: <minecraft:sand>
+* <ore:itemSlag>: <minecraft:sand>
+* <ore:crystalSlag>: <minecraft:sand>
+* <ore:sandstone>: 2 * <minecraft:sand>
+* <ore:blockClay>: 4 * <minecraft:clay_ball>
+* <ore:blockQuartz>: <minecraft:quartz> * 4
+* <ore:glowstone>: <minecraft:glowstone_dust> * 4
+* <ore:rodBlaze>: <minecraft:blaze_powder> * 4
+* <ore:fuelCoke>: <immersiveengineering:material:17>
+* <ore:blockCoke>: <immersiveengineering:material:17> * 9
+* <ore:blockFuelCoke>: <immersiveengineering:material:17> * 9
+* <ore:blockCoalCoke>: <immersiveengineering:material:17> * 9
+* <ore:wool>: 4 * <minecraft:string>
+* <ore:oreLapis>: 9 * <minecraft:dye:4>
+* <ore:oreDiamond>: 2 * <minecraft:diamond>
+* <ore:oreRedstone>: 6 * <minecraft:redstone>
+* <ore:oreEmerald>: 2 * <minecraft:emerald>
+* <ore:oreQuartz>: 3 * <minecraft:quartz>
+* <ore:oreCoal>: 4 * <minecraft:coal:0>
+* <ore:gemPrismarine>: <minecraft:prismarine_crystals>
+* <ore:coal>: <betterwithmods:material:18>
+* <ore:charcoal>: <betterwithmods:material:37>
+
+<minecraft:dye:3>: <betterwithmods:material:44>
+<ore:cropWheat>: <betterwithmods:raw_pastry:3>
+<minecraft:bone_block>: 9 * <minecraft:dye:15>
+<minecraft:skull:0>: 10 * <minecraft:dye:15>
+<minecraft:skull:1>: 10 * <minecraft:dye:15>
+<ore:netherrack>: <betterwithmods:material:15>
+<ore:sugarcane>: <minecraft:sugar> * 2
+<ore:cropHemp>: <betterwithmods:material:3> * 3
+
+
+Grindstone:
+* <ore:bone>: 3 * <minecraft:dye:15>
+* <minecraft:bone_block>: 9 * <minecraft:dye:15>
+<ore:cropWheat>: <horsepower:flour> (-> <betterwithmods:raw_pastry:3>)
+<ore:sugarcane>: <minecraft:sugar> * 1 (-> * 2)
+
+<ore:cobblestone>: <minecraft:gravel>
+<ore:gravel>: <minecraft:sand>
+<ore:itemSlag>: <minecraft:sand>
+<ore:crystalSlag>: <minecraft:sand>
+<ore:sandstone>: 2 * <minecraft:sand>
+<ore:blockClay>: 4 * <minecraft:clay_ball>
+<ore:blockQuartz>: <minecraft:quartz> * 4
+<ore:glowstone>: <minecraft:glowstone_dust> * 4
+<ore:rodBlaze>: <minecraft:blaze_powder> * 3
+<ore:fuelCoke>: <immersiveengineering:material:17>
+<ore:blockCoke>: <immersiveengineering:material:17> * 9
+<ore:blockFuelCoke>: <immersiveengineering:material:17> * 9
+<ore:blockCoalCoke>: <immersiveengineering:material:17> * 9
+<ore:wool>: 4 * <minecraft:string>
+<ore:oreLapis>: 6 * <minecraft:dye:4>
+<ore:oreDiamond>: 1 * <minecraft:diamond>
+<ore:oreRedstone>: 4 * <minecraft:redstone>
+<ore:oreEmerald>: 1 * <minecraft:emerald>
+<ore:oreQuartz>: 2 * <minecraft:quartz>
+<ore:oreCoal>: 3 * <minecraft:coal:0>
+<ore:gemPrismarine>: <minecraft:prismarine_crystals>
+<ore:coal>: <betterwithmods:material:18>
+<ore:charcoal>: <betterwithmods:material:37>
+<minecraft:dye:3>: <betterwithmods:material:44>
+<minecraft:skull:0>: 10 * <minecraft:dye:15>
+<minecraft:skull:1>: 10 * <minecraft:dye:15>
+<ore:netherrack>: <betterwithmods:material:15>
+<ore:cropHemp>: <betterwithmods:material:3> * 3
+
+
+Mill:
+* <ore:bone>: 6 * <minecraft:dye:15>
+* <ore:cropWheat>: <betterwithmods:raw_pastry:3>
+* <ore:netherrack>: <betterwithmods:material:15>
+* <ore:rodBlaze>: <minecraft:blaze_powder> * 3
+* <ore:sugarcane>: <minecraft:sugar> * 2
+* <ore:cropHemp>: <betterwithmods:material:3> * 3
+* <ore:coal>: <betterwithmods:material:18>
+* <ore:charcoal>: <betterwithmods:material:37>
+* <minecraft:bone_block>: 9 * <minecraft:dye:15>
+* <minecraft:skull:0>: 10 * <minecraft:dye:15>
+* <minecraft:skull:1>: 10 * <minecraft:dye:15>
+* <minecraft:leather>: <betterwithmods:material:7>
+* <minecraft:rabbit_hide>: <betterwithmods:material:33>
+* <betterwithmods:material:31>: <betterwithmods:material:33>
+* <minecraft:dye:3>: <betterwithmods:material:44>
+
+<ore:cobblestone>: <minecraft:gravel>
+<ore:gravel>: <minecraft:sand>
+<ore:itemSlag>: <minecraft:sand>
+<ore:crystalSlag>: <minecraft:sand>
+<ore:sandstone>: 2 * <minecraft:sand>
+<ore:blockClay>: 4 * <minecraft:clay_ball>
+<ore:blockQuartz>: <minecraft:quartz> * 4
+<ore:glowstone>: <minecraft:glowstone_dust> * 4
+<ore:rodBlaze>: <minecraft:blaze_powder> * 3
+<ore:fuelCoke>: <immersiveengineering:material:17>
+<ore:blockCoke>: <immersiveengineering:material:17> * 9
+<ore:blockFuelCoke>: <immersiveengineering:material:17> * 9
+<ore:blockCoalCoke>: <immersiveengineering:material:17> * 9
+<ore:wool>: 4 * <minecraft:string>
+<ore:oreLapis>: 6 * <minecraft:dye:4>
+<ore:oreDiamond>: 1 * <minecraft:diamond>
+<ore:oreRedstone>: 4 * <minecraft:redstone>
+<ore:oreEmerald>: 1 * <minecraft:emerald>
+<ore:oreQuartz>: 2 * <minecraft:quartz>
+<ore:oreCoal>: 3 * <minecraft:coal:0>
+<ore:gemPrismarine>: <minecraft:prismarine_crystals>

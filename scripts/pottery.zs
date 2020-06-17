@@ -21,6 +21,8 @@ furnace.remove(<notreepunching:ceramic_small_vessel>);
 furnace.remove(<notreepunching:ceramic_large_vessel>);
 furnace.remove(<notreepunching:ceramic_bucket>);
 furnace.remove(<minecraft:flower_pot>);
+furnace.remove(<minecraft:brick>);
+furnace.remove(<minecraft:hardened_clay>);
 
 recipes.remove(<notreepunching:clay_brick>);
 recipes.remove(<notreepunching:clay_tool>);

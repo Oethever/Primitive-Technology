@@ -6,6 +6,3 @@ mods.jei.JEI.removeAndHide(<betterwithmods:axle_generator:2>);
 mods.jei.JEI.removeAndHide(<betterwithmods:material:11>);
 mods.jei.JEI.removeAndHide(<betterwithmods:axle_generator:1>);
 //mods.notreepunching.NoTreePunching.addKnifeGrassDrop(<charcoal_pit:straw>);
-
-
-mods.chisel.Carving.addVariation("blockCoalCoke", <charcoal_pit:block_coke>);

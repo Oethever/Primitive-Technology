@@ -13,7 +13,8 @@ mods.immersiveengineering.CokeOven.addRecipe(<charcoal_pit:item_coke>, 500, <min
 mods.immersiveengineering.CokeOven.addRecipe(<charcoal_pit:block_coke>, 4500, <minecraft:coal_block>, 16200);
 mods.immersiveengineering.CokeOven.addRecipe(<minecraft:coal:1>, 250, <ore:logWood>, 1800);
 
-mods.betterwithmods.Kiln.remove([<minecraft:coal:1>]);
+//mods.betterwithmods.Kiln.remove([<minecraft:coal:1>]);
+furnace.remove(<minecraft:coal:1>);
 
 mods.jei.JEI.removeAndHide(<immersiveengineering:material:6>);
 mods.jei.JEI.removeAndHide(<immersiveengineering:stone_decoration:3>);
@@ -21,3 +22,7 @@ mods.jei.JEI.removeAndHide(<thermalfoundation:material:802>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:storage_resource:1>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:material:769>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:material:768>);
+
+// Merge Chisel and Charcoal Pit coal coke block OreDict entries
+<ore:blockCoalCoke>.addAll(<ore:blockCoke>);
+<ore:blockCoke>.addAll(<ore:blockCoalCoke>);
