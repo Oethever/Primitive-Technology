@@ -31,8 +31,8 @@ key_key.hotbar.6:7:NONE
 key_key.hotbar.7:8:NONE
 key_key.hotbar.8:9:NONE
 key_key.hotbar.9:10:NONE
-key_keybind.railcraft.cart.bed:208:NONE
 key_key.betterfoliage.gui:66:NONE
+key_key.toastcontrol.clear:36:NONE
 key_key.wearablebackpacks.open:48:NONE
 key_key.pickup.item:0:NONE
 key_key.jei.toggleOverlay:24:CONTROL
@@ -46,15 +46,14 @@ key_key.jei.previousPage:201:NONE
 key_key.jei.nextPage:209:NONE
 key_key.jei.bookmark:30:NONE
 key_key.jei.toggleBookmarkOverlay:0:NONE
+key_key.cofh.multimode:47:NONE
 key_key.immersiveengineering.magnetEquip:31:NONE
 key_key.immersiveengineering.chemthrowerSwitch:0:NONE
-key_key.carry.desc:42:NONE
+key_key.astikorcarts.desc:19:NONE
+key_key.carry.desc:29:NONE
 key_Mo'Bends Menu:34:NONE
-key_keybind.railcraft.loco.reverse:53:ALT
-key_keybind.railcraft.loco.faster:52:ALT
-key_keybind.railcraft.loco.slower:51:ALT
-key_keybind.railcraft.loco.mode:50:ALT
-key_keybind.railcraft.loco.whistle:49:ALT
+key_key.stackable.place:25:NONE
+key_key.stackable.cycle:46:NONE
 key_key.journeymap.zoom_in:13:NONE
 key_key.journeymap.zoom_out:12:NONE
 key_key.journeymap.minimap_type:26:NONE

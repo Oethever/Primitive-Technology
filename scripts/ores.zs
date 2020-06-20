@@ -5,6 +5,9 @@ import crafttweaker.liquid.ILiquidStack;
 import crafttweaker.oredict.IOreDict;
 import crafttweaker.oredict.IOreDictEntry;
 
+// This function returns the Immersive Engineering ingot
+// corresponding to the given ore dict entry, if any exists.
+// If it does not exists, returns the first IItemStack from the entry.
 function getIEIngot(oreDictEntry as IOreDictEntry) as IItemStack{
 	val itemStacks = oreDictEntry.items as IItemStack[];
 	if loadedMods has "Immersive Engineering" {
@@ -27,84 +30,98 @@ mods.charcoalpit.addAlloyRecipe(<thermalfoundation:material:163>, 1, false, true
 val easyMetals = ["Copper", "Silver", "Tin", "Gold", "Lead", "Bronze"] as string[];
 for metal in easyMetals {
 	val ingot = [getIEIngot(oreDict.get("ingot" ~ metal))] as IItemStack[];
-	mods.betterwithmods.Crucible.addStoked([oreDict.get("ore" ~ metal)], ingot);
 	mods.betterwithmods.Crucible.addStoked([oreDict.get("dust" ~ metal)], ingot);
 	mods.betterwithmods.Crucible.addStoked([oreDict.get("ingot" ~ metal)], ingot);
+	if (metal != "Bronze") {
+		mods.betterwithmods.Crucible.addStoked([oreDict.get("ore" ~ metal)], ingot);
+	}
+}
+
+// Add low-melting-point alloy smelting in stoked crucible
+val easyAlloys = [
+	[<thermalfoundation:material:163>, <ore:ingotCopper> * 3, <ore:ingotTin>    ],        
+	[<thermalfoundation:material:163>, <ore:ingotCopper> * 3, <ore:dustTin>     ],        
+	[<thermalfoundation:material:163>, <ore:dustCopper> * 3,  <ore:ingotTin>    ],        
+	[<thermalfoundation:material:163>, <ore:dustCopper> * 3,  <ore:dustTin>     ],        
+	[<immersiveengineering:metal:7>  , <ore:ingotGold>,       <ore:ingotSilver> ],        
+	[<immersiveengineering:metal:7>  , <ore:ingotGold>,       <ore:dustSilver>  ],        
+	[<immersiveengineering:metal:7>  , <ore:dustGold>,        <ore:ingotSilver> ],        
+	[<immersiveengineering:metal:7>  , <ore:dustGold>,        <ore:dustSilver>  ]        
+] as IIngredient[][];
+
+for alloy in easyAlloys {
+	mods.betterwithmods.Crucible.addStoked([alloy[1], alloy[2]] as IIngredient[], [alloy[0].itemArray[0]] as IItemStack[]);
 }
 
 
 // Create a list of all ingots
 var ingots = [
-	<minecraft:iron_ingot>,
-	<minecraft:gold_ingot>,
-	<immersiveengineering:material:19>
-] as IItemStack[];
-
-var ingotDef = <immersiveengineering:metal>.definition;
-for i in 0 to 9 {
-	ingots += ingotDef.makeStack(i);
-}
-
-ingotDef = <thermalfoundation:material>.definition;
-for i in 128 to 137 {
-	ingots += ingotDef.makeStack(i);
-}
-for i in 160 to 168 {
-	ingots += ingotDef.makeStack(i);
-}
-
-ingotDef = <tconstruct:ingots>.definition;
-for i in 0 to 6 {
-	ingots += ingotDef.makeStack(i);
-}
+	<ore:ingotIron>,
+	<ore:ingotGold>,
+	<ore:ingotAluminum>,
+	<ore:ingotCopper>,
+	<ore:ingotTin>,
+	<ore:ingotNickel>,
+	<ore:ingotSilver>,
+	<ore:ingotLead>,
+	<ore:ingotUranium>,
+	<ore:ingotConstantan>,
+	<ore:ingotSteel>,
+	<ore:ingotElectrum>,
+	<ore:ingotInvar>,
+	<ore:ingotBronze>,
+	<ore:ingotCobalt>,
+	<ore:ingotArdite>,
+	<ore:ingotManyullyn>,
+	<ore:ingotKnightslime>,
+	<ore:ingotPigiron>,
+	<ore:ingotAlubrass>,
+] as IIngredient[];
 
 // Remove all ingots from being smelted in a furnace
-for ingot in ingots {
-	furnace.remove(ingot);
+for ingotOre in ingots {
+	for ingotItem in ingotOre.itemArray {
+		furnace.remove(ingotItem);
+	}
 }
-
-
 
 
 // Remove ore smelting in tconstruct smeltry
 var oreToLiquids = {
-	<minecraft:iron_ore>:         <liquid:iron>,
-	<minecraft:gold_ore>:         <liquid:gold>,
-	<tconstruct:ore:0>:           <liquid:cobalt>,
-	<immersiveengineering:ore:0>: <liquid:copper>,
-	<thermalfoundation:ore:0>:    <liquid:copper>,
-	<thermalfoundation:ore:1>:    <liquid:tin>,
-	<immersiveengineering:ore:2>: <liquid:lead>,
-	<thermalfoundation:ore:3>:    <liquid:lead>,
-	<immersiveengineering:ore:4>: <liquid:nickel>,
-	<thermalfoundation:ore:5>:    <liquid:nickel>,
-	<immersiveengineering:ore:3>: <liquid:silver>,
-	<thermalfoundation:ore:2>:    <liquid:silver>,
-	<immersiveengineering:ore:1>: <liquid:aluminum>,
-	<thermalfoundation:ore:4>:    <liquid:aluminum>,
-	<immersiveengineering:ore:5>: <liquid:uranium>
-} as ILiquidStack[IItemStack];
+	<ore:oreIron>    : <liquid:iron>,
+	<ore:oreGold>    : <liquid:gold>,
+	<ore:oreCobalt>  : <liquid:cobalt>,
+	<ore:oreCopper>  : <liquid:copper>,
+	<ore:oreTin>     : <liquid:tin>,
+	<ore:oreLead>    : <liquid:lead>,
+	<ore:oreNickel>  : <liquid:nickel>,
+	<ore:oreSilver>  : <liquid:silver>,
+	<ore:oreAluminum>: <liquid:aluminum>,
+	<ore:oreUranium> : <liquid:uranium>
+} as ILiquidStack[IIngredient];
 
 for ore, liquid in oreToLiquids {
-	mods.tconstruct.Melting.removeRecipe(liquid, ore);
+	for item in ore.itemArray {
+		mods.tconstruct.Melting.removeRecipe(liquid, item);
+	}
 }
 
 
 // Remove creation of pure metal dust from ore with engineer's hammer
 val dusts = [
-	<immersiveengineering:metal:9>,
-	<immersiveengineering:metal:10>,
-	<immersiveengineering:metal:11>,
-	<immersiveengineering:metal:12>,
-	<immersiveengineering:metal:13>,
-	<immersiveengineering:metal:14>,
-	<immersiveengineering:metal:18>,
-	<immersiveengineering:metal:19>,
-	<thermalfoundation:material:65>,
-	<thermalfoundation:material:70>,
-	<thermalfoundation:material:71>,
-	<thermalfoundation:material:72>
-] as IItemStack[];
-for dust in dusts {
-	recipes.remove(dust);
+	<ore:dustAluminum>,
+	<ore:dustCopper>,
+	<ore:dustIron>,
+	<ore:dustGold>,
+	<ore:dustTin>,
+	<ore:dustNickel>,
+	<ore:dustSilver>,
+	<ore:dustLead>,
+	<ore:dustUranium>
+] as IIngredient[];
+
+for dustOre in dusts {
+	for dustItem in dustOre.itemArray {
+		recipes.remove(dustItem);
+	}
 }

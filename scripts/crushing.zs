@@ -73,6 +73,7 @@ val missingGrindStoneRecipes = {
 	<minecraft:skull:1>: <minecraft:dye:15> * 10,
 	<ore:netherrack>: <betterwithmods:material:15>,
 	<ore:cropHemp>: <betterwithmods:material:3> * 3,
+	<ore:leather>: <betterwithmods:material:7>,
 	
 	<ore:cropWheat>: <betterwithmods:raw_pastry:3>,
 	<ore:sugarcane>: <minecraft:sugar>

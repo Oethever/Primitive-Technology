@@ -1,0 +1,15 @@
+setIcon(<minecraft:torch>)
+
+setTitle("Let there be torches!")
+
+setDescription("You can now create torches, but they need to be lit! And they will only last one hour (IRL time). You can craft a matchbox that will last longer than the wooden fire starter.")
+
+addParent("primitivetechnology:Bronze Age/root")
+
+criteria = addCriteria("hasCharcoal", "minecraft:inventory_changed")
+
+criteria.addItem(<realistictorches:torch_unlit>)
+
+setPos(217,40)
+
+alwaysVisible()
