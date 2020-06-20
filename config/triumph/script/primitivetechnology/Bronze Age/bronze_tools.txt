@@ -1,0 +1,29 @@
+setIcon(<tconstruct:pick_head, nbt:{Material: "bronze"}>)
+
+setTitle("Bronze tools")
+
+setDescription("You can now craft all bronze parts, they have the same mining level as iron.")
+
+addParent("primitivetechnology:Bronze Age/smeltery")
+addParent("primitivetechnology:Bronze Age/bronze")
+
+setRequirements("any")
+
+criteria = addCriteria("hasItem0", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:pick_head, nbt:{Material: "bronze"}>)
+
+criteria = addCriteria("hasItem1", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:shovel_head, nbt:{Material: "bronze"}>)
+
+criteria = addCriteria("hasItem2", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:axe_head, nbt:{Material: "bronze"}>)
+
+criteria = addCriteria("hasItem3", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:tool_rod, nbt:{Material: "bronze"}>)
+
+criteria = addCriteria("hasItem4", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:binding, nbt:{Material: "bronze"}>)
+
+setPos(139,-166)
+
+alwaysVisible()

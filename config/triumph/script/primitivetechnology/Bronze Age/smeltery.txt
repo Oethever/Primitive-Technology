@@ -1,0 +1,15 @@
+setIcon(<tconstruct:smeltery_controller:0>)
+
+setTitle("Smeltery")
+
+setDescription("The smeltery is used to forge metals into tool parts. It cannot be used to smelt ore directly, only pure metals (ingots, dusts, etc). For the basic smeltery, you will need at least:\n\n * 9 Seared bricks\n * A smeltery controller\n * A casting table\n * A seared tank\n * A seared drain\n * A seared faucet\n\nYou can craft the book 'Material and You' to obtain the instruction on how to build the smeltery. This book contains also information about the various materials you can use to craft tools. The smeltery controller lights up when the structure is valid. You will need to fill the tank with lava, which you can transport with a clay bucket (the bucket will break after use).")
+
+addParent("primitivetechnology:Bronze Age/root")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<tconstruct:smeltery_controller:0>)
+
+setPos(103,-166)
+
+alwaysVisible()

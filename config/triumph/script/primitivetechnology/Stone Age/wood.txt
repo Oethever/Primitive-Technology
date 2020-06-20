@@ -2,14 +2,14 @@ setIcon(<minecraft:planks>)
 
 setTitle("Wood")
 
-setDescription("You can now chop down trees with a flint axe! Cut logs with your axe to make planks. \nHint: you need your offhand slot to be able to craft the axe.")
+setDescription("You can now make wood planks on the chopping block!")
 
-addParent("primitivetechnology:Stone Age/plant_fiber")
+addParent("primitivetechnology:Stone Age/chopping_block")
 
 criteria = addCriteria("hasPlanks", "minecraft:inventory_changed")
 
 criteria.addItem(<minecraft:planks>)
 
-setPos(120,0)
+setPos(105,0)
 
 alwaysVisible()

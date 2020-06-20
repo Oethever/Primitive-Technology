@@ -10,6 +10,6 @@ criteria = addCriteria("hasBricks", "minecraft:inventory_changed")
 
 criteria.addItem(<minecraft:brick_block>)
 
-setPos(217,-100)
+setPos(204,-86)
 
 alwaysVisible()

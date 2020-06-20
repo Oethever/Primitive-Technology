@@ -1,0 +1,15 @@
+setIcon(<horsepower:chopping_block>)
+
+setTitle("Chop chop")
+
+setDescription("Create a chopping block by crafting a wood log and any axe. To use it, place the wood on it with right click, and then left click the wood four times with an axe.")
+
+addParent("primitivetechnology:Stone Age/flint_axe")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<horsepower:chopping_block>)
+
+setPos(72,0)
+
+alwaysVisible()

@@ -6,10 +6,20 @@ setDescription("You have everything you need to make a full tool workshop:\n* Cr
 
 addParent("primitivetechnology:Stone Age/wood")
 
-criteria = addCriteria("hasWorkshop", "minecraft:inventory_changed")
+setRequirements("all")
 
-criteria.addItem(<tconstruct:tooltables>)
+criteria = addCriteria("hasItem0", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:tooltables:0>)
 
-setPos(160,0)
+criteria = addCriteria("hasItem1", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:tooltables:1>)
+
+criteria = addCriteria("hasItem2", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:tooltables:2>)
+
+criteria = addCriteria("hasItem3", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:tooltables:3>)
+
+setPos(138,0)
 
 alwaysVisible()

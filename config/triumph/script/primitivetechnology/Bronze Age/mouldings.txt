@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:moulding_wood, nbt:{texture:{Properties:{variant:"oak"}, Name: "minecraft:planks"}}>)
+
+setTitle("Moudling, Sidings and Corners")
+
+setDescription("The precision of the saw allows you to create small pieces of wood and stone, useful for decoration.")
+
+addParent("primitivetechnology:Bronze Age/saw")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:moulding_wood>)
+
+setPos(257,44)
+
+alwaysVisible()

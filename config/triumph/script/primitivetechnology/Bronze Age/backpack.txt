@@ -1,0 +1,15 @@
+setIcon(<wearablebackpacks:backpack>)
+
+setTitle("Backpack")
+
+setDescription("You can now craft a backpack! It will allow you to carry more than 2 types of items at the same time. To equip it, place it down and break it while sneaking. Once equipped, you can access its inventory with the key B (configurable). Sneak and right click with an empty hand to unequip it.")
+
+addParent("primitivetechnology:Bronze Age/tanned_leather")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<wearablebackpacks:backpack>)
+
+setPos(181,-109)
+
+alwaysVisible()

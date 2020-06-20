@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:cooking_pot:1>)
+
+setTitle("Cauldron")
+
+setDescription("The cauldron is another way of cooking food, but more importantly allows you to tan leather. You need the 'Better With Mods' cauldron, not the vanilla one.")
+
+addParent("primitivetechnology:Bronze Age/copper")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:cooking_pot:1>)
+
+setPos(103,-83)
+
+alwaysVisible()

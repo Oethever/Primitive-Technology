@@ -1,0 +1,15 @@
+setIcon(<realistictorches:matchbox>)
+
+setTitle("Matches")
+
+setDescription("Once you have access to paper, you can craft a matchbox, which is a much more efficient fire source than the fire starter.")
+
+addParent("primitivetechnology:Stone Age/fire")
+
+criteria = addCriteria("hasCharcoal", "minecraft:inventory_changed")
+
+criteria.addItem(<realistictorches:matchbox>)
+
+setPos(171,33)
+
+alwaysVisible()

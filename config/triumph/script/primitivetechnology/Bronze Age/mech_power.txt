@@ -1,0 +1,19 @@
+setIcon(<immersiveengineering:wooden_device1:1>)
+
+setTitle("Mechanical power")
+
+setDescription("To use basic machines, you need to harvest mechanical power from the nature. Two options are available: water wheel and windmill. Both are crafted with treated wood. Make sure nothing is in the way of the wheel. You can transmit the mechanical power to your machines with wooden axles and gearboxes.")
+
+addParent("primitivetechnology:Bronze Age/treated_wood")
+
+setRequirements("any")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+criteria.addItem(<immersiveengineering:wooden_device1:0>)
+
+criteria2 = addCriteria("hasItem2", "minecraft:inventory_changed")
+criteria2.addItem(<immersiveengineering:wooden_device1:1>)
+
+setPos(143,44)
+
+alwaysVisible()

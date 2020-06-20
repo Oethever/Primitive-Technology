@@ -1,0 +1,15 @@
+setIcon(<thermalfoundation:material:129>)
+
+setTitle("Tin")
+
+setDescription("You can now smelt tin.")
+
+addParent("primitivetechnology:Bronze Age/ore_kiln")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<thermalfoundation:material:129>)
+
+setPos(63,-136)
+
+alwaysVisible()

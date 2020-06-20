@@ -1,0 +1,15 @@
+setIcon(<astikorcarts:plowcart>)
+
+setTitle("Plow")
+
+setDescription("The plowing cart can be use to till a field up to three blocks at once, or turn dirt into path for creating long routes. Sneak-right-click to access its hoe/shovel slot. To attach it to a horse, press W (configurable) once close to the cart while riding a tamed horse with a saddle. NOTE: due to mod incompatibility, the plow REQUIRES vanilla hoe or shovel. That is why you can craft them from the crafting grid.")
+
+addParent("primitivetechnology:Bronze Age/saddle")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<astikorcarts:plowcart>)
+
+setPos(223,-187)
+
+alwaysVisible()

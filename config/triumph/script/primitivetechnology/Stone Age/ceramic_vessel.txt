@@ -10,6 +10,6 @@ criteria = addCriteria("hasCeramicVessel", "minecraft:inventory_changed")
 
 criteria.addItem(<charcoal_pit:ceramic_pot>)
 
-setPos(182,-40)
+setPos(171,-33)
 
 alwaysVisible()

@@ -1,0 +1,15 @@
+setIcon(<toolbelt:belt>)
+
+setTitle("Tool Belt")
+
+setDescription("The tool belt can be used to hold more tools and swap tool easily. Place it to your Baubles belt slot (use V to find it). Use tab (configurable) to add or remove a tool to your belt. Only non-stackable items can be added to the belt.")
+
+addParent("primitivetechnology:Bronze Age/tanned_leather")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<toolbelt:belt>)
+
+setPos(181,-146)
+
+alwaysVisible()

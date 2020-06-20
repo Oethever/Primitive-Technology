@@ -1,0 +1,15 @@
+setIcon(<minecraft:iron_ingot>)
+
+setTitle("Iron")
+
+setDescription("You can now smelt iron in the bloomery.")
+
+addParent("primitivetechnology:Iron Age/bloomery")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:iron_ingot>)
+
+setPos(83,0)
+
+alwaysVisible()

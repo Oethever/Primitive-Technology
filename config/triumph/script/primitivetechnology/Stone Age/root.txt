@@ -2,7 +2,7 @@ setIcon(<notreepunching:axe/flint>)
 
 setTitle("Stone Age")
 
-setDescription("Welcome to Primitive Technology!\n\nThis modpack has two major differences with vanilla/other modpacks:\n1. You have two hands, so you have two slots (plus the offhand slot)\n2. No block in chests, they are too big! You will need alternate storage solutions.\nItems are not picked up automatically when you approach. Instead, you can pick them up with right click, or by sneaking. You will need to drop stacks often, so make sure to have an easy key binding. Don't worry, items take one hour to despawn (instead of 5 minutes in vanilla).")
+setDescription("Welcome to Primitive Technology!\n\nThis modpack has two major differences with vanilla/other modpacks:\n\n 1. You have two hands, so you have two slots (plus the offhand slot).\n 2. No block in chests, they are too big! You will need alternate storage solutions.\n\nItems are not picked up automatically when you approach. Instead, you can pick them up with R (configurable, defaults to right click if no key is bound), or by sneaking. You will need to drop stacks often, so make sure to have an easy key binding for that. Don't worry, items take one hour to despawn (instead of 5 minutes in vanilla).")
 
 setBackground("minecraft:textures/gui/advancements/backgrounds/adventure.png")
 
@@ -10,7 +10,7 @@ setShowToast(false)
 
 setAnnounceToChat(false)
 
-setPos(0,0)
+setPos(-56,0)
 
 //Adds a single location criteria. Since this has nothing specific set, it will be completed the instant the player is added to the world, thus unlocking the page instantly.
 addCriteria("location", "minecraft:location")

@@ -1,0 +1,15 @@
+setIcon(<charcoal_pit:clay_pot>)
+
+setTitle("Ore kiln")
+
+setDescription("The clay vessel is your first mean of smelting ore. Place it on the ground, fill it with ore, and add charcoal (1 charcoal for each 2 ores). Then pick it up by breaking it, and place it in a hole while sneaking, just like any other pottery. Add plant fibers and wood, and light the fire. After a while, you will obtain a cracked vessel, which can be broken to obtain your precious ingots.")
+
+addParent("primitivetechnology:Bronze Age/root")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<charcoal_pit:clay_pot>)
+
+setPos(22,-30)
+
+alwaysVisible()

@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:single_machine:2>)
+
+setTitle("Filtered hopper")
+
+setDescription("The filtered hopper is used to filter ground up materials, and can also be used to sort items. It behaves like a vanilla hopper, but it must be powered with mechanical power. Filters can be added in the top slots, with differents behaviors:\n\n * Grate: let pass unstackable items\n * Iron bars: let pass stackable items\n * ladder: let pass items, not blocks\n * Slats: let pass string and paper only\n * Trap door: let pass blocks, not items\n * Wicker: let pass dust, piles and sand\n * Soul sand: collects experience orbs (also works unpowered, but with smaller orbs only)")
+
+addParent("primitivetechnology:Bronze Age/mech_power")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:single_machine:2>)
+
+setPos(223,-21)
+
+alwaysVisible()

@@ -1,0 +1,15 @@
+setIcon(<notreepunching:axe/flint>)
+
+setTitle("Axial power")
+
+setDescription("The flint hatchet is your best friend. Craft it with a piece of plant string, a flint shard and a stick. Since you have only two slots and this recipe requires three ingredients, you need to put one of the ingredients in your offhand slot (i.e. left hand for righties).")
+
+addParent("primitivetechnology:Stone Age/plant_fiber")
+
+criteria = addCriteria("hasPlanks", "minecraft:inventory_changed")
+
+criteria.addItem(<notreepunching:axe/flint>)
+
+setPos(39,0)
+
+alwaysVisible()

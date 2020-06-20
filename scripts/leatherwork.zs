@@ -4,23 +4,23 @@ import crafttweaker.data.IData;
 // backpack without gold
 recipes.remove(<wearablebackpacks:backpack>);
 recipes.addShaped(<wearablebackpacks:backpack>,
-[[<ore:hideTanned>, <ore:hideTanned>, <ore:hideTanned>],
+[[<ore:hideStrap>,  <ore:hideTanned>, <ore:hideStrap>],
  [<ore:hideTanned>, <ore:wool>,       <ore:hideTanned>],
- [<ore:hideTanned>, <ore:hideTanned>, <ore:hideTanned>]]);
+ [<ore:hideStrap>,  <ore:hideTanned>, <ore:hideStrap>]]);
 
 
 // Tool belt without metal
 recipes.remove(<toolbelt:belt>);
 recipes.addShaped(<toolbelt:belt>.withTag({Size: 2, Items: {}}),
-[[<ore:string>,     <ore:hideTanned>, <ore:string>],
- [<ore:hideTanned>, null,             <ore:hideTanned>],
- [<ore:hideTanned>, null,             <ore:hideTanned>]]);
+[[<ore:string>,    <ore:hideStrap>, <ore:string>],
+ [<ore:hideStrap>, null,            <ore:hideStrap>],
+ [<ore:hideStrap>, null,            <ore:hideStrap>]]);
 
 recipes.remove(<toolbelt:pouch>);
 recipes.addShaped(<toolbelt:pouch>,
-[[<ore:string>,     null,             <ore:string>],
- [<ore:hideTanned>, null,             <ore:hideTanned>],
- [<ore:string>,     <ore:hideTanned>, <ore:string>]]);
+[[<ore:string>,    null,            <ore:string>],
+ [<ore:hideStrap>, null,            <ore:hideStrap>],
+ [<ore:string>,    <ore:hideStrap>, <ore:string>]]);
 
 // Tool belt upgrade in shapeless crafting
 for i in 2 to 9 {
@@ -48,3 +48,11 @@ val leathers = [
 for leather in leathers {
 	mods.betterwithmods.Cauldron.addStoked([leather], [<betterwithmods:material:12>]);
 }
+
+// Saddle
+val ingotBronzeOrIron = <ore:ingotBronze>.or(<ore:ingotIron>);
+recipes.remove(<minecraft:saddle>);
+recipes.addShaped(<minecraft:saddle>,
+[[<ore:hideTanned>,  <ore:hideTanned>,  <ore:hideTanned>],
+ [<ore:hideTanned>,  ingotBronzeOrIron, <ore:hideTanned>],
+ [ingotBronzeOrIron, null,              ingotBronzeOrIron]]);

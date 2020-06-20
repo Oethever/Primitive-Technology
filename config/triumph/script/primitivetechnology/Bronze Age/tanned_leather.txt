@@ -1,0 +1,16 @@
+setIcon(<betterwithmods:material:6>)
+
+setTitle("Tanned Leather")
+
+setDescription("By putting scoured leather in a cauldron, you can finally obtain tanned leather. It will come handy for creating various objects.")
+
+addParent("primitivetechnology:Bronze Age/scoured_leather")
+addParent("primitivetechnology:Bronze Age/cauldron")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:material:6>)
+
+setPos(138,0)
+
+alwaysVisible()

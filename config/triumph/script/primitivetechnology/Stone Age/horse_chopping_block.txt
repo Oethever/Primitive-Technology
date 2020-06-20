@@ -1,0 +1,15 @@
+setIcon(<horsepower:chopper>)
+
+setTitle("Horse grindstone")
+
+setDescription("The horse chopping block the horse-powered version of the chopping block. Follow the instruction in the tooltip for using it. Leash a tamed horse to it, and give your friend some work! Items are inserted in the chopper using a (wooden) hopper, and can be extracted with another hopper below.")
+
+addParent("primitivetechnology:Stone Age/lead")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<horsepower:chopper>)
+
+setPos(72,80)
+
+alwaysVisible()

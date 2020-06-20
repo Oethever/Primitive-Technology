@@ -13,6 +13,7 @@ mods.jei.JEI.removeAndHide(<immersiveengineering:pickaxe_steel>);
 mods.jei.JEI.removeAndHide(<immersiveengineering:shovel_steel>);
 mods.jei.JEI.removeAndHide(<immersiveengineering:axe_steel>);
 
+mods.horsepower.ChoppingBlock.add(<minecraft:melon_block>, <minecraft:melon>, 1);
 
 // No nether needed for blast furnace
 recipes.remove(<immersiveengineering:stone_decoration:1>);
@@ -88,3 +89,40 @@ recipes.addShaped(<betterwithmods:cooking_pot:1>,
 [[ingotCopperOrIron, <ore:bone>,        ingotCopperOrIron],
  [ingotCopperOrIron, clay_bucket_water, ingotCopperOrIron],
  [ingotCopperOrIron, ingotCopperOrIron, ingotCopperOrIron]]);
+ 
+
+// Allow to use bronze instead of iron for some early recipes
+val ingotBronzeOrIron = <ore:ingotBronze>.or(<ore:ingotIron>);
+
+// BWM saw
+recipes.addShaped(<betterwithmods:saw>,
+[[<ore:ingotBronze>, <ore:ingotBronze>, <ore:ingotBronze>],
+ [<ore:gearWood>,    <ore:hideBelt>,    <ore:gearWood>],
+ [<ore:plankWood>,   <ore:gearWood>,    <ore:plankWood>]]);
+ 
+// Engineer's hammer
+recipes.remove(<immersiveengineering:tool:0>);
+recipes.addShaped(<immersiveengineering:tool:0>,
+[[null,            ingotBronzeOrIron, <ore:string>],
+ [null,            <ore:stickWood>,   ingotBronzeOrIron],
+ [<ore:stickWood>, null,              null]]);
+
+// Water wheel
+recipes.remove(<immersiveengineering:wooden_device1:0>);
+recipes.addShaped(<immersiveengineering:wooden_device1:0>,
+[[null,                               <immersiveengineering:material:10>, null],
+ [<immersiveengineering:material:10>, ingotBronzeOrIron,                  <immersiveengineering:material:10>],
+ [null,                               <immersiveengineering:material:10>, null]]);
+
+// Windmill
+recipes.remove(<immersiveengineering:wooden_device1:1>);
+recipes.addShaped(<immersiveengineering:wooden_device1:1>,
+[[<immersiveengineering:material:11>, <immersiveengineering:material:11>, <immersiveengineering:material:11>],
+ [<immersiveengineering:material:11>, ingotBronzeOrIron,                  <immersiveengineering:material:11>],
+ [<immersiveengineering:material:11>, <immersiveengineering:material:11>, <immersiveengineering:material:11>]]);
+
+// Add a recipe for lead without slime or glue
+recipes.addShaped(<minecraft:lead> * 2,
+[[<ore:string>, <ore:string>,          null        ],
+ [<ore:string>, <betterwithmods:rope>, null        ],
+ [null,         null,                  <ore:string>]]);

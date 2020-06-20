@@ -1,0 +1,15 @@
+setIcon(<immersiveengineering:metal:0>)
+
+setTitle("Copper")
+
+setDescription("You can now smelt copper.")
+
+addParent("primitivetechnology:Bronze Age/ore_kiln")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<immersiveengineering:metal:0>)
+
+setPos(63,-109)
+
+alwaysVisible()

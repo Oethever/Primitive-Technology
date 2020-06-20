@@ -1,0 +1,15 @@
+setIcon(<minecraft:iron_ingot>)
+
+setTitle("Glowstone")
+
+setDescription("Find some glowstone.")
+
+addParent("primitivetechnology:Iron Age/nether")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:iron_ingot>)
+
+setPos(228,0)
+
+alwaysVisible()

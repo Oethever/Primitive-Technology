@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:cooking_pot:1>)
+
+setTitle("Stoked Cauldron")
+
+setDescription("The cauldron can be put on a stoked fire, just like the kiln and the crucible. This enables a different set of recipes, such as tallow from meat and glue from leather. Make some glue to unlock this achievement.")
+
+addParent("primitivetechnology:Bronze Age/bellow")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:material:12>)
+
+setPos(257,-78)
+
+alwaysVisible()

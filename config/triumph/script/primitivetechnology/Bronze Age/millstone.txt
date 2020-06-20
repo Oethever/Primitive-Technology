@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:single_machine:0>)
+
+setTitle("Mill Stone")
+
+setDescription("The mill stone has the same uses as the grindstone, but can be powered by mechanical power.")
+
+addParent("primitivetechnology:Bronze Age/mech_power")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:single_machine:0>)
+
+setPos(223,12)
+
+alwaysVisible()

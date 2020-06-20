@@ -1,0 +1,16 @@
+setIcon(<thermalfoundation:material:163>)
+
+setTitle("Bronze Ingot")
+
+setDescription("You have now access to bronze! Smelt 1 unit of tin and 3 units of copper to obtain it.")
+
+addParent("primitivetechnology:Bronze Age/copper")
+addParent("primitivetechnology:Bronze Age/tin")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<thermalfoundation:material:163>)
+
+setPos(103,-136)
+
+alwaysVisible()

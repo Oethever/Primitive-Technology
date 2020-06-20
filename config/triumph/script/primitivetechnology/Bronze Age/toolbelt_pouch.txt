@@ -1,0 +1,15 @@
+setIcon(<toolbelt:pouch>)
+
+setTitle("Pouch")
+
+setDescription("The pouch is an extension for the toolbelt. Simply put your toolbelt and a pouch on the crafting table to add 1 slot to your belt. The maximum capacity of a toolbelt is 9 slots (7 additional pouches).")
+
+addParent("primitivetechnology:Bronze Age/toolbelt")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<toolbelt:pouch>)
+
+setPos(223,-146)
+
+alwaysVisible()

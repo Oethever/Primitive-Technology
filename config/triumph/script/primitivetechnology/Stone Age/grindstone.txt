@@ -1,0 +1,15 @@
+setIcon(<horsepower:hand_grindstone>)
+
+setTitle("Grindstone")
+
+setDescription("The hand grindstone converts about everything in powder: bone to bonemeal, cobble to gravel, flower to dye, etc. Two other important uses are to extract gems from gem ores, and to scour leather.")
+
+addParent("primitivetechnology:Bronze Age/stick")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<horsepower:hand_grindstone>)
+
+setPos(22,5)
+
+alwaysVisible()

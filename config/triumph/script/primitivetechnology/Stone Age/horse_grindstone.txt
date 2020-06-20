@@ -1,0 +1,15 @@
+setIcon(<horsepower:grindstone>)
+
+setTitle("Horse grindstone")
+
+setDescription("The horse grindstone the horse-powered version of the grindstone. Follow the instruction in the tooltip for using it. Pay attention to place it 1 meter above the ground. Leash a tamed horse to it, and give your friend some work! Items are inserted in the grindstone using a (wooden) hopper, and can be extracted with another hopper below.")
+
+addParent("primitivetechnology:Stone Age/lead")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<horsepower:grindstone>)
+
+setPos(72,109)
+
+alwaysVisible()

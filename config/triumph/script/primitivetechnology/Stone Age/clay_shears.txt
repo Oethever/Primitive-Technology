@@ -10,6 +10,6 @@ criteria = addCriteria("hasClayShears", "minecraft:inventory_changed")
 
 criteria.addItem(<ceramics:clay_shears>)
 
-setPos(182,-80)
+setPos(171,-68)
 
 alwaysVisible()

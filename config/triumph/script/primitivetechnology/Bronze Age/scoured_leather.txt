@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:material:7>)
+
+setTitle("Scoured Leather")
+
+setDescription("Scour your leather using the grindstone or the mill stone, removing impurities.")
+
+addParent("primitivetechnology:Bronze Age/root")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:material:7>)
+
+setPos(103,0)
+
+alwaysVisible()

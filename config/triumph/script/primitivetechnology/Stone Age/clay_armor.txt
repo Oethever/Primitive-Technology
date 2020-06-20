@@ -13,6 +13,6 @@ criteria.addItem(<ceramics:clay_helmet>)
 criteria.addItem(<ceramics:clay_leggings>)
 criteria.addItem(<ceramics:clay_boots>)
 
-setPos(182,-120)
+setPos(171,-103)
 
 alwaysVisible()

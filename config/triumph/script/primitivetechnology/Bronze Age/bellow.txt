@@ -1,0 +1,16 @@
+setIcon(<betterwithmods:bellows>)
+
+setTitle("Bellow")
+
+setDescription("The bellow is used in the kiln to increase the strength of the fire. Place it such that it face the fire. Its area of effect is a 3x3 square in front of it. It must be powered by mechanical power (wooden axle) from below. The mechanical power must be alternating: a redstone clock must periodically stop the axle (gearboxes can be controlled by redstone for that reason). Without redstone, you can also do it manually with a button.\n\nBellows can also be used to push items by blowing air at them, in that case the mechanical power need not to be alternating.")
+
+addParent("primitivetechnology:Bronze Age/tanned_leather")
+addParent("primitivetechnology:Bronze Age/mech_power")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:bellows>)
+
+setPos(181,-78)
+
+alwaysVisible()

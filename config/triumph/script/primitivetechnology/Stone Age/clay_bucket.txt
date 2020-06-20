@@ -10,6 +10,6 @@ criteria = addCriteria("hasClayBucket", "minecraft:inventory_changed")
 
 criteria.addItem(<ceramics:clay_bucket>)
 
-setPos(217,-60)
+setPos(204,-51)
 
 alwaysVisible()

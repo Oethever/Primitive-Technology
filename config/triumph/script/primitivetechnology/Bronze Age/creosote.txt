@@ -1,0 +1,15 @@
+setIcon(<ceramics:clay_bucket, nbt:{fluids:{FluidName: "creosote", Amount:1000}}>)
+
+setTitle("Creosote Oil")
+
+setDescription("Creosote oil is a byproduct of charcoal and coke coal production, and is mainly used to treat wood.")
+
+addParent("primitivetechnology:Bronze Age/coke_oven")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<ceramics:clay_bucket, nbt:{fluids:{FluidName: "creosote", Amount:1000}}>)
+
+setPos(63,44)
+
+alwaysVisible()

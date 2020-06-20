@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:saw>)
+
+setTitle("Saw")
+
+setDescription("The saw is a machine powered by mechanical power (wooden axle), used mainly to cut wood with greater speed and efficiency. The axle can be on any side, except the blade side. To cut a block of wood, simply place it in front of the blade.")
+
+addParent("primitivetechnology:Bronze Age/mech_power")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:saw>)
+
+setPos(223,44)
+
+alwaysVisible()

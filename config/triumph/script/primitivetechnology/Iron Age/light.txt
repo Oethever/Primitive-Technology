@@ -1,0 +1,15 @@
+setIcon(<minecraft:torch>)
+
+setTitle("Iron")
+
+setDescription("Use glowstone paste to create torches that never burn out!")
+
+addParent("primitivetechnology:Iron Age/glowstone")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:torch>)
+
+setPos(264,0)
+
+alwaysVisible()

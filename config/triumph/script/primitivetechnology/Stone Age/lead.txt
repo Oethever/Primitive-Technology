@@ -1,0 +1,15 @@
+setIcon(<minecraft:lead>)
+
+setTitle("Your best friend")
+
+setDescription("Although you cannot ride horses without a saddle, you can still tame them and give them some work. Craft a lead with a few strings.")
+
+addParent("primitivetechnology:Stone Age/plant_fiber")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:lead>)
+
+setPos(39,52)
+
+alwaysVisible()

@@ -1,0 +1,15 @@
+setIcon(<impstorage:controller>)
+
+setTitle("Modern problems and solutions")
+
+setDescription("The storage controller is a very convenient block that stores blocks or items (no restriction!) by physically placing them in a delimited area in front of it. Once placed and configured (right click on it), use a hopper to add items. You can retrieve items either by right-clicking the desired block in the storage area, or using a hopper to extract it.")
+
+addParent("primitivetechnology:Bronze Age/copper")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<impstorage:controller>)
+
+setPos(103,-109)
+
+alwaysVisible()

@@ -1,0 +1,15 @@
+setIcon(<astikorcarts:mobcart>)
+
+setTitle("Transportation cart")
+
+setDescription("Transportation carts can be used to move mobs and players. To transport a mob, push it on the cart. Release the mob with right-click while sneaking. You can mount yourself the cart with a normal right click. To attach it to a horse, press W (configurable) once close to the cart while riding a tamed horse with a saddle.")
+
+addParent("primitivetechnology:Bronze Age/saddle")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<astikorcarts:mobcart>)
+
+setPos(224,-220)
+
+alwaysVisible()

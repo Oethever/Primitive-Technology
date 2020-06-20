@@ -1,0 +1,16 @@
+setIcon(<minecraft:saddle>)
+
+setTitle("Fast transportation")
+
+setDescription("Use tanned leather and bronze to make a saddle.")
+
+addParent("primitivetechnology:Bronze Age/tanned_leather")
+addParent("primitivetechnology:Bronze Age/bronze")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:saddle>)
+
+setPos(217,-187)
+
+alwaysVisible()

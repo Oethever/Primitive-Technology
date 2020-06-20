@@ -1,0 +1,15 @@
+setIcon(<minecraft:brick_block>)
+
+setTitle("Stoked Kiln")
+
+setDescription("The kiln is a multiblock made of 5 bricks. Place them around a block of air, leaving one side open for access. Then, make a fire below the bottom block. The fire must be stoked with a bellow (see the Bellow achievement for more details). Once set up, simply place the ingredient as a block inside the kiln, it will cook and then drop the result. The kiln allows you to make most pottery much faster than by firing them in a hole.")
+
+addParent("primitivetechnology:Bronze Age/bellow")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:brick_block>)
+
+setPos(223,-60)
+
+alwaysVisible()

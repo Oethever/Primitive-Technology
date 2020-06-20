@@ -10,6 +10,6 @@ criteria = addCriteria("hasFlintShard", "minecraft:inventory_changed")
 
 criteria.addItem(<notreepunching:flint_shard>)
 
-setPos(40,0)
+setPos(-23,0)
 
 alwaysVisible()

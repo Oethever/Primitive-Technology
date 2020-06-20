@@ -1,0 +1,15 @@
+setIcon(<astikorcarts:cargocart>)
+
+setTitle("Cargo cart")
+
+setDescription("Carts can be used to transport large amount of stuff, fast. To attach it to a horse, press W (configurable) once close to the cart while riding a tamed horse with a saddle. Shift-right click on the cart to access its inventory.")
+
+addParent("primitivetechnology:Bronze Age/saddle")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<astikorcarts:cargocart>)
+
+setPos(257,-204)
+
+alwaysVisible()

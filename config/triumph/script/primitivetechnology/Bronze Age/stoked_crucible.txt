@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:cooking_pot:0>)
+
+setTitle("Crucible")
+
+setDescription("The crucible is used only on a stoked fire, and has the same purpose as the the ore kiln. It is however faster, reusable, and easier to use.")
+
+addParent("primitivetechnology:Bronze Age/bellow")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:cooking_pot:0>)
+
+setPos(223,-96)
+
+alwaysVisible()

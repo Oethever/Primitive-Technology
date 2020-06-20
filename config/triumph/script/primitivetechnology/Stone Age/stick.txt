@@ -1,0 +1,15 @@
+setIcon(<minecraft:stick>)
+
+setTitle("Stick")
+
+setDescription("Make wood sticks by chopping planks on the chopping block. You get more or less 8 sticks per wood block.")
+
+addParent("primitivetechnology:Stone Age/chopping_block")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:stick>)
+
+setPos(105,33)
+
+alwaysVisible()

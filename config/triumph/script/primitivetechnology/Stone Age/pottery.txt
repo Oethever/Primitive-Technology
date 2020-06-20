@@ -10,6 +10,6 @@ criteria = addCriteria("hasDonePottery", "minecraft:inventory_changed")
 
 criteria.addItem(<charcoal_pit:item_ash>)
 
-setPos(138,-40)
+setPos(138,-33)
 
 alwaysVisible()
