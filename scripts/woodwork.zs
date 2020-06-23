@@ -2,9 +2,7 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 
 val sawTool = <ore:toolSaw>.or(<betterwithmods:steel_hacksaw>).or(<bibliocraft:framingsaw>);
-val axeTool = <ore:toolWeakAxe>.or(<tconstruct:mattock>).or(<tconstruct:hatchet>);
-val plankDef = <minecraft:planks>.definition;
-val logDef = <minecraft:log>.definition;
+val axeTool = <ore:toolWeakAxe>.or(<ore:toolMattock>).or(<betterwithmods:steel_mattock>).or(<tconstruct:mattock>).or(<tconstruct:hatchet>);
 
 
 // This item is mysteriously useless
@@ -15,6 +13,7 @@ mods.jei.JEI.removeAndHide(<betterwithmods:shaft>);
 for plankItem in <ore:plankWood>.itemArray {
 	recipes.remove(plankItem);
 }
+
 // Add back saw recipe as shapeless. We can't use ore dictionnary here because each
 // type of log generates a different type of plank
 val logToPlanks = {
@@ -28,7 +27,7 @@ val logToPlanks = {
 } as IItemStack[IIngredient];
 
 for log, planks in logToPlanks {
-	recipes.addShapeless(planks * 4, [log, sawTool.transformDamage()]);
+	recipes.addShapeless(planks * 17, [log, sawTool.transformDamage()]);
 }
 
 
@@ -41,11 +40,14 @@ mods.horsepower.ChoppingBlock.add(<ore:plankWood>, <minecraft:stick> * 8, 4, tru
 
 
 // Chopping block recipes (for creating a chopping block, not using it)
-recipes.remove(<horsepower:chopping_block>);
+// Not activated because it conflict with better with mod wood chopping
+// and it very difficult to remove
+/*recipes.remove(<horsepower:chopping_block>);
+var i = 0 as int;
 // Create a different recipe for each type of chopping block / log wood
 for logItem in <ore:logWood>.itemArray {
 	recipes.addShapeless(
-		"chopping_block_" ~ logItem.name,
+		"chopping_block_" ~ i,
 		<horsepower:chopping_block> * 2,
 		[logItem.marked("mark"), axeTool.transformDamage()],
 		function(output, inputs, craftInfo) {
@@ -58,4 +60,10 @@ for logItem in <ore:logWood>.itemArray {
 			}) * 2;
 		},
 		null);
-}
+	i += 1;
+}*/
+
+
+// Framing sheet
+recipes.remove(<bibliocraft:framingsheet>);
+recipes.addShapeless(<bibliocraft:framingsheet> * 4, [<ore:plankWood>, <ore:plankWood>, sawTool.transformDamage()]);

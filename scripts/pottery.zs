@@ -1,4 +1,6 @@
-# CREATED USING EXTERNAL TWEAKER
+// Clay flower pot had a conflicting recipe 
+recipes.remove(<charcoal_pit:clay_flowerpot>);
+recipes.addShaped(<charcoal_pit:clay_flowerpot>, [[<ore:clay>], [<ore:clay>]]);
 
 mods.notreepunching.FirePit.remove(<notreepunching:pottery/large_vessel>);
 mods.notreepunching.FirePit.remove(<notreepunching:pottery/small_vessel>);

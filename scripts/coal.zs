@@ -1,6 +1,5 @@
 recipes.removeShaped(<betterwithmods:hibachi>);
 val blockCoalAny = <ore:blockCoal>.or(<ore:blockCharcoal>).or(<ore:blockCoalCoke>).or(<ore:fuelCoke>);
-
 recipes.addShaped(
 	<betterwithmods:hibachi>,
 	[[blockCoalAny, blockCoalAny,                blockCoalAny],

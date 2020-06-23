@@ -4,36 +4,132 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.liquid.ILiquidStack;
 import crafttweaker.oredict.IOreDict;
 import crafttweaker.oredict.IOreDictEntry;
+import scripts.functions.getModItemDefault;
+import scripts.functions.getModItems;
+import scripts.functions.concatString;
 
-// This function returns the Immersive Engineering ingot
-// corresponding to the given ore dict entry, if any exists.
-// If it does not exists, returns the first IItemStack from the entry.
-function getIEIngot(oreDictEntry as IOreDictEntry) as IItemStack{
-	val itemStacks = oreDictEntry.items as IItemStack[];
-	if loadedMods has "Immersive Engineering" {
-		for item in itemStacks {
-			if loadedMods["Immersive Engineering"].items has item {
-				return item;
+val materialsToRemove = [
+	"Platinum",
+	"Iridium",
+	"Invar",
+	"Uranium",
+	"Mithril",
+	"Signalum",
+	"Lumium",
+	"Enderium",
+	"Pigiron",
+	"Ardite",
+	"Manyullyn",
+	"Knightslime"
+] as string[];
+
+val materialsToKeep = [
+	"Iron",
+	"Gold",
+	"Copper",
+	"Tin",
+	"Silver",
+	"Lead",
+	"Nickel",
+	"Bronze",
+	"Steel",
+	"Electrum",
+	"Constantan",
+	"Aluminum",
+	"Alubrass",
+	"Cobalt"
+] as string[];
+
+val allMaterials = concatString(materialsToKeep, materialsToRemove);
+
+val oreDictPrefixes = [
+	"ore",
+	"ingot",
+	"block",
+	"nugget",
+	"dust",
+	"plate",
+	"gear",
+	"rod",
+	"slab",
+	"blockSheetmetal",
+	"slabSheetmetal",
+	"fence",
+	"stick",
+	"coin",
+	"dustTiny",
+	"dustSmall",
+	"plateDense"
+] as string[];
+
+
+for material in materialsToRemove {
+	// Remove crafting recipes
+	for oreDictPrefix in oreDictPrefixes {
+		val oreDictEntry = oreDict.get(oreDictPrefix ~ material);
+		for item in oreDictEntry.itemArray {
+			mods.jei.JEI.removeAndHide(item);
+		}
+	}
+
+	// Remove all press recipes
+	for oreDictPrefix in ["plate", "gear", "rod", "stick", "wire"] as string[] {
+		val oreDictEntry = oreDict.get(oreDictPrefix ~ material);
+		for item in oreDictEntry.itemArray {
+			mods.immersiveengineering.MetalPress.removeRecipe(item);
+		}
+	}
+
+	// Remove crusher dust recipes
+	for item in oreDict.get("dust" ~ material).itemArray {
+		mods.immersiveengineering.Crusher.removeRecipe(item);
+	}
+}
+
+// Remove the Thermal Foundation version of items that
+// Immersive Engineering already provides
+for material in materialsToKeep {
+	if (material != "Tin" & material != "Bronze") {
+		for oreDictPrefix in oreDictPrefixes {
+			val oreDictEntry = oreDict.get(oreDictPrefix ~ material);
+			val foundItems = getModItems("thermalfoundation", oreDictEntry) as IItemStack[];
+			for item in foundItems {
+				mods.jei.JEI.removeAndHide(item);
 			}
 		}
 	}
-	return oreDictEntry.firstItem;
 }
+
+for material in allMaterials {
+	// Remove all ingots and nuggest from being smelted in a furnace
+	for oreDictPrefix in ["ingot", "nugget"] as string[] {
+		for item in oreDict.get(oreDictPrefix ~ material).itemArray {
+			furnace.remove(item);
+		}
+	}
+	
+	// Remove creation of pure metal dust from ore with engineer's hammer
+	// This also remove metal alloying through dust blending
+	for item in oreDict.get("dust" ~ material).itemArray {	
+		recipes.remove(item);
+	}
+}
+
 
 // Add bronze ingot/dust smelting in Charcoal Pit crucible
 // mods.charcoalpit.addAlloyRecipe(result, amount, advanced, usePrefix, recipe);
 // *advanced:  boolean-if true only the bloomery can use this recipe
 // *usePrefix: boolean-if true the oredict values of the recipe will have the prefixes ore/ingot/dust applied. this allows ores, ingots and dust to be mixed as well as only using one recipe.
 mods.charcoalpit.addAlloyRecipe(<thermalfoundation:material:163>, 1, false, true, [<ore:Bronze>]);
+mods.charcoalpit.addAlloyRecipe(<immersiveengineering:metal:7>, 1, false, true, [<ore:Electrum>]);
 
 // Add low-melting-point metals smelting in stoked crucible
-val easyMetals = ["Copper", "Silver", "Tin", "Gold", "Lead", "Bronze"] as string[];
+val easyMetals = ["Copper", "Silver", "Tin", "Gold", "Lead", "Bronze", "Electrum"] as string[];
 for metal in easyMetals {
-	val ingot = [getIEIngot(oreDict.get("ingot" ~ metal))] as IItemStack[];
-	mods.betterwithmods.Crucible.addStoked([oreDict.get("dust" ~ metal)], ingot);
-	mods.betterwithmods.Crucible.addStoked([oreDict.get("ingot" ~ metal)], ingot);
-	if (metal != "Bronze") {
-		mods.betterwithmods.Crucible.addStoked([oreDict.get("ore" ~ metal)], ingot);
+	val ingot = getModItemDefault("immersiveengineering", oreDict.get("ingot" ~ metal));
+	mods.betterwithmods.Crucible.addStoked([oreDict.get("dust" ~ metal)], [ingot]);
+	if (metal != "Bronze" & metal != "Electrum") {
+		mods.betterwithmods.Crucible.addStoked([oreDict.get("ore" ~ metal)], [ingot]);
 	}
 }
 
@@ -51,38 +147,6 @@ val easyAlloys = [
 
 for alloy in easyAlloys {
 	mods.betterwithmods.Crucible.addStoked([alloy[1], alloy[2]] as IIngredient[], [alloy[0].itemArray[0]] as IItemStack[]);
-}
-
-
-// Create a list of all ingots
-var ingots = [
-	<ore:ingotIron>,
-	<ore:ingotGold>,
-	<ore:ingotAluminum>,
-	<ore:ingotCopper>,
-	<ore:ingotTin>,
-	<ore:ingotNickel>,
-	<ore:ingotSilver>,
-	<ore:ingotLead>,
-	<ore:ingotUranium>,
-	<ore:ingotConstantan>,
-	<ore:ingotSteel>,
-	<ore:ingotElectrum>,
-	<ore:ingotInvar>,
-	<ore:ingotBronze>,
-	<ore:ingotCobalt>,
-	<ore:ingotArdite>,
-	<ore:ingotManyullyn>,
-	<ore:ingotKnightslime>,
-	<ore:ingotPigiron>,
-	<ore:ingotAlubrass>,
-] as IIngredient[];
-
-// Remove all ingots from being smelted in a furnace
-for ingotOre in ingots {
-	for ingotItem in ingotOre.itemArray {
-		furnace.remove(ingotItem);
-	}
 }
 
 
@@ -106,22 +170,25 @@ for ore, liquid in oreToLiquids {
 	}
 }
 
+// Remove some metal melting and alloying
+var liquidsToRemove = [
+	// These are real metals, but we don't need them yet
+	<liquid:iridium>,
+	<liquid:zinc>,
+	<liquid:platinum>,
+	<liquid:invar>,
+	// These should definitely be removed
+	<liquid:enderium>,
+	<liquid:lumium>,
+	<liquid:signalum>,
+	<liquid:manyullyn>,
+	<liquid:mithril>,
+	<liquid:knightslime>,
+	<liquid:ardite>,
+	<liquid:pigiron>,
+] as ILiquidStack[];
 
-// Remove creation of pure metal dust from ore with engineer's hammer
-val dusts = [
-	<ore:dustAluminum>,
-	<ore:dustCopper>,
-	<ore:dustIron>,
-	<ore:dustGold>,
-	<ore:dustTin>,
-	<ore:dustNickel>,
-	<ore:dustSilver>,
-	<ore:dustLead>,
-	<ore:dustUranium>
-] as IIngredient[];
-
-for dustOre in dusts {
-	for dustItem in dustOre.itemArray {
-		recipes.remove(dustItem);
-	}
+for liquid in liquidsToRemove {
+	mods.tconstruct.Melting.removeRecipe(liquid);
+	mods.tconstruct.Alloy.removeRecipe(liquid);
 }

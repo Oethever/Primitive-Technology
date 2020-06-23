@@ -3,6 +3,7 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.oredict.IOreDict;
 import crafttweaker.oredict.IOreDictEntry;
 
+
 val missingCrusherRecipes = {
 	<minecraft:dye:3>: <betterwithmods:material:44>,
 	<ore:cropWheat>: <betterwithmods:raw_pastry:3>,
