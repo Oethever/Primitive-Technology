@@ -13,3 +13,4 @@ criteria.addItem(<horsepower:chopping_block>)
 setPos(72,0)
 
 alwaysVisible()
+setFrameType("GOAL")

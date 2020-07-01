@@ -1,0 +1,15 @@
+setIcon(<tconstruct:tooltables:4>)
+
+setTitle("Pattern chest")
+
+setDescription("The pattern chest is very useful to store patterns, place it next to your part builder.")
+
+addParent("primitivetechnology:Stone Age/upgrade")
+
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:tooltables:4>)
+
+setPos(171,31)
+
+alwaysVisible()

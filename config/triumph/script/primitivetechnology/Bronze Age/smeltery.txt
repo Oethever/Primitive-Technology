@@ -13,3 +13,4 @@ criteria.addItem(<tconstruct:smeltery_controller:0>)
 setPos(103,-166)
 
 alwaysVisible()
+setFrameType("GOAL")

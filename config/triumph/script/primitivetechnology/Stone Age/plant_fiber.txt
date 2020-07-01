@@ -13,3 +13,4 @@ criteria.addItem(<notreepunching:grass_fiber>)
 setPos(6,0)
 
 alwaysVisible()
+setFrameType("GOAL")

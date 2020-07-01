@@ -1,15 +1,14 @@
-setIcon(<minecraft:iron_ingot>)
+setIcon(<minecraft:netherrack>)
 
 setTitle("Nether")
 
 setDescription("Create a portal, and go to hell.")
 
-addParent("primitivetechnology:Iron Age/steel")
+addParent("primitivetechnology:Iron Age/obsidian")
 
-criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+criteria = addCriteria("entered_nether", "minecraft:location")
+criteria.setDimID(-1)
 
-criteria.addItem(<minecraft:iron_ingot>)
-
-setPos(195,0)
+setPos(229,0)
 
 alwaysVisible()

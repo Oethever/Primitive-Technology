@@ -4,7 +4,7 @@ setTitle("Creosote Oil")
 
 setDescription("Creosote oil is a byproduct of charcoal and coke coal production, and is mainly used to treat wood.")
 
-addParent("primitivetechnology:Bronze Age/coke_oven")
+addParent("primitivetechnology:Bronze Age/funnel")
 
 criteria = addCriteria("hasItem", "minecraft:inventory_changed")
 

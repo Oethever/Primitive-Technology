@@ -1,15 +1,16 @@
-setIcon(<minecraft:iron_ingot>)
+setIcon(<charcoal_pit:bloomery_hatch>)
 
 setTitle("Bloomery")
 
-setDescription("You can now smelt iron in the bloomery.")
+setDescription("The bloomery is used to smelt iron, aluminum and other advanced metals. It can be built out of brick-like material (bricks, stone bricks, etc). Once completed, you can add ores (up to 32) and coal (1 coal per 2 ores) by tossing them in the chimney. Tossed ores should transform in a dark blend. Then, light up the bloomery by either right-click on the hatch with a flint and steel, or lighting on fire the block in front of the hatch (such that the flame is in front of the hatch).\n\nMinimal structure (B for bricks, H for hatch, A for air):\nLayer 0:\n AAA\n ABA\n ABA\nLayer 1:\n ABA\n BAB\n BHB\nLayers 2 to 4:\n ABA\n BAB\n ABA")
 
 addParent("primitivetechnology:Iron Age/root")
 
 criteria = addCriteria("hasItem", "minecraft:inventory_changed")
 
-criteria.addItem(<minecraft:iron_ingot>)
+criteria.addItem(<charcoal_pit:bloomery_hatch>)
 
 setPos(38,0)
 
 alwaysVisible()
+setFrameType("GOAL")

@@ -6,7 +6,7 @@ mods.notreepunching.FirePit.remove(<notreepunching:pottery/large_vessel>);
 mods.notreepunching.FirePit.remove(<notreepunching:pottery/small_vessel>);
 mods.notreepunching.FirePit.remove(<notreepunching:pottery/flower_pot>);
 mods.notreepunching.FirePit.remove(<notreepunching:pottery/bucket>);
-mods.notreepunching.FirePit.remove(<notreepunching:clay_brick>);
+mods.notreepunching.FirePit.remove(<minecraft:brick>);
 
 furnace.remove(<ceramics:clay_barrel>);
 furnace.remove(<ceramics:clay_barrel:1>);
@@ -60,3 +60,4 @@ mods.betterwithmods.Kiln.add(<ceramics:clay_barrel_unfired:1>, [<ceramics:clay_b
 mods.betterwithmods.Kiln.add(<ceramics:clay_barrel_unfired:3>, [<ceramics:porcelain_barrel_extension>]);
 mods.betterwithmods.Kiln.add(<ceramics:clay_barrel_unfired:2>, [<ceramics:porcelain_barrel>]);
 mods.betterwithmods.Kiln.add(<ceramics:clay_soft>, [<ceramics:porcelain>]);
+mods.betterwithmods.Kiln.add(<charcoal_pit:clay_pot>, [<charcoal_pit:ceramic_pot>]);

@@ -13,3 +13,4 @@ criteria.addItem(<notreepunching:axe/flint>)
 setPos(39,0)
 
 alwaysVisible()
+setFrameType("GOAL")

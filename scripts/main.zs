@@ -1,17 +1,19 @@
 import crafttweaker.data.IData;
 import mods.jei.JEI.removeAndHide;
 
+// This should be default
+//<ore:bricksStone>.addAll(<minecraft:stonebrick:*>);
+
+// Remove some items that are provided by multiple mods
 removeAndHide(<charcoal_pit:fire_starter>);
 removeAndHide(<betterwithmods:axle_generator>);
 removeAndHide(<betterwithmods:axle_generator:2>);
 removeAndHide(<betterwithmods:material:11>);
 removeAndHide(<betterwithmods:axle_generator:1>);
-//mods.notreepunching.NoTreePunching.addKnifeGrassDrop(<charcoal_pit:straw>);
-
 
 // Remove IE steel tools
+// We do not remove hoe and shovel because they can be used in the hoe cart
 removeAndHide(<immersiveengineering:pickaxe_steel>);
-removeAndHide(<immersiveengineering:shovel_steel>);
 removeAndHide(<immersiveengineering:axe_steel>);
 
 // Melon on the chopping block only
@@ -26,7 +28,7 @@ recipes.addShaped(<immersiveengineering:stone_decoration:1> * 3,
  [<ore:clay>,       <ore:ingotBrick>,                          <ore:clay>]]);
  
  
-// Lit torch with iron and flint, fire starter, or matchbox
+// Light torch with iron and flint, fire starter, or matchbox
 //recipes.remove(<realistictorches:torch_lit>);
 /*recipes.addShapeless(
 	<realistictorches:torch_lit>,
@@ -53,80 +55,32 @@ recipes.addShaped(<impstorage:controller_interface>,
 [[<ore:ingotCopper>, <ore:trapdoorWood>, <ore:ingotCopper>],
  [null,              <minecraft:hopper>.or(<tconstruct:wooden_hopper:0>), null]]);
 
+
 // Clay bucket should be usable where iron bucket is
 val clay_bucket_water = <ceramics:clay_bucket:0>.withTag({fluids: {FluidName: "water", Amount: 1000}});
- 
-recipes.addShapeless(
-	<minecraft:paper> * 2,
-	[<ore:dustWood>, <ore:dustWood>, <ore:dustWood>, <ore:dustWood>, clay_bucket_water]
-);
- 
-recipes.addShapeless(
-	<minecraft:clay_ball> * 4,
-	[<ore:itemSlag>, <ore:itemSlag>, <ore:dirt>, clay_bucket_water]
-);
- 
-recipes.addShapeless(
-	<realistictorches:glowstone_paste>,
-	[<ore:dustGlowstone>, <ore:clay>, clay_bucket_water]
-);
- 
-recipes.addShaped(<chisel:waterstone:0>,
-[[<ore:stone>, <ore:stone>,       <ore:stone>],
- [<ore:stone>, clay_bucket_water, <ore:stone>],
- [<ore:stone>, <ore:stone>,       <ore:stone>]]);
 
-recipes.addShaped(<immersiveengineering:stone_decoration:5> * 12,
-[[<ore:itemSlag>,   <ore:clay>,        <ore:itemSlag>],
- [<ore:gravel>,     clay_bucket_water, <ore:gravel>],
- [<ore:itemSlag>,   <ore:clay>,        <ore:itemSlag>]]);
- 
-recipes.addShaped(<immersiveengineering:stone_decoration:5> * 8,
-[[<ore:sand>,   <ore:clay>,        <ore:sand>],
- [<ore:gravel>, clay_bucket_water, <ore:gravel>],
- [<ore:sand>,   <ore:clay>,        <ore:sand>]]);
- 
-recipes.addShaped(<immersiveengineering:metal_decoration0:7> * 2,
-[[<ore:ingotSteel>,  <ore:ingotCopper>, <ore:ingotSteel>],
- [<ore:ingotCopper>, clay_bucket_water, <ore:ingotCopper>],
- [<ore:ingotSteel>,  <ore:ingotCopper>, <ore:ingotSteel>]]);
- 
-val ingotCopperOrIron = <ore:ingotCopper>.or(<ore:ingotIron>);
-recipes.addShaped(<betterwithmods:cooking_pot:1>,
-[[ingotCopperOrIron, <ore:bone>,        ingotCopperOrIron],
- [ingotCopperOrIron, clay_bucket_water, ingotCopperOrIron],
- [ingotCopperOrIron, ingotCopperOrIron, ingotCopperOrIron]]);
- 
+recipes.replaceAllOccurences(<minecraft:water_bucket>, clay_bucket_water | <minecraft:water_bucket>, <*>);
 
+recipes.replaceAllOccurences(<minecraft:bucket>, <ceramics:clay_bucket:0> | <minecraft:bucket>,
+	<charcoal_pit:stone_creosote_collector>  |
+	<charcoal_pit:brick_creosote_collector>  |
+	<charcoal_pit:nether_creosote_collector> |
+	<betterwithmods:bucket>);
+  
+ 
 // Allow to use bronze instead of iron for some early recipes
-val ingotBronzeOrIron = <ore:ingotBronze>.or(<ore:ingotIron>);
+recipes.replaceAllOccurences(<ore:ingotIron>, <ore:ingotCopper> | <ore:ingotIron> | <ore:ingotBronze>,
+	<betterwithmods:cooking_pot:1>); 
 
-// BWM saw
-recipes.addShaped(<betterwithmods:saw>,
-[[<ore:ingotBronze>, <ore:ingotBronze>, <ore:ingotBronze>],
- [<ore:gearWood>,    <ore:hideBelt>,    <ore:gearWood>],
- [<ore:plankWood>,   <ore:gearWood>,    <ore:plankWood>]]);
- 
-// Engineer's hammer
-recipes.remove(<immersiveengineering:tool:0>);
-recipes.addShaped(<immersiveengineering:tool:0>,
-[[null,            ingotBronzeOrIron, <ore:string>],
- [null,            <ore:stickWood>,   ingotBronzeOrIron],
- [<ore:stickWood>, null,              null]]);
+recipes.replaceAllOccurences(<ore:ingotIron>, <ore:ingotBronze> | <ore:ingotIron>,
+	  <betterwithmods:saw>
+	| <immersiveengineering:tool:0>
+	| <immersiveengineering:wooden_device1:0>
+	| <immersiveengineering:wooden_device1:1>
+	| <bibliocraft:toolrack:*>
+	| <bibliocraft:framingsaw>
+);
 
-// Water wheel
-recipes.remove(<immersiveengineering:wooden_device1:0>);
-recipes.addShaped(<immersiveengineering:wooden_device1:0>,
-[[null,                               <immersiveengineering:material:10>, null],
- [<immersiveengineering:material:10>, ingotBronzeOrIron,                  <immersiveengineering:material:10>],
- [null,                               <immersiveengineering:material:10>, null]]);
-
-// Windmill
-recipes.remove(<immersiveengineering:wooden_device1:1>);
-recipes.addShaped(<immersiveengineering:wooden_device1:1>,
-[[<immersiveengineering:material:11>, <immersiveengineering:material:11>, <immersiveengineering:material:11>],
- [<immersiveengineering:material:11>, ingotBronzeOrIron,                  <immersiveengineering:material:11>],
- [<immersiveengineering:material:11>, <immersiveengineering:material:11>, <immersiveengineering:material:11>]]);
 
 // Add a recipe for lead without slime or glue
 recipes.addShaped(<minecraft:lead> * 2,
@@ -136,6 +90,10 @@ recipes.addShaped(<minecraft:lead> * 2,
 
 
 recipes.addShapeless(<dawnoftimebuilder:wax> * 10, [<minecraft:sugar>, <realistictorches:torch_lit>]);
+
+// Press paper recipes
+mods.horsepower.Press.add(<ore:sugarcane> * 3, <minecraft:paper> * 6);
+mods.horsepower.Press.add(<dawnoftimebuilder:mulberry_leaves> * 3, <minecraft:paper> * 6);
 
 // CONFLICTS //
 
@@ -176,6 +134,18 @@ recipes.addShaped(<dawnoftimebuilder:spruce_roof_support> * 6,
 [[<minecraft:planks:1>, null,                 <minecraft:planks:1>],
  [<minecraft:planks:1>, null,                 <minecraft:planks:1>],
  [<minecraft:planks:1>, <minecraft:planks:1>, <minecraft:planks:1>]]);
+ 
+// Dawn of time builder edition has a built-in conflict, yay
+recipes.remove(<dawnoftimebuilder:tatami_mat>);
+recipes.addShaped(<dawnoftimebuilder:tatami_mat> * 4,
+	[[<dawnoftimebuilder:thatch_bamboo>, <dawnoftimebuilder:thatch_bamboo>, <dawnoftimebuilder:thatch_bamboo>],
+	[<dawnoftimebuilder:thatch_bamboo>, <dawnoftimebuilder:thatch_bamboo>, <dawnoftimebuilder:thatch_bamboo>]]);
+ 
+// Tachi sword is removed by tinker hegemony
+recipes.addShaped(<dawnoftimebuilder:tachi_sword>,
+	[[null, null, <ore:ingotIron>],
+	 [<ore:ingotGold>, <ore:ingotIron>, null],
+	 [<minecraft:planks:1>, <ore:ingotGold>, null]]);
 
 // Diamon ingot ???
 removeAndHide(<betterwithmods:material:45>);

@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:hibachi>)
+
+setTitle("Hibachi")
+
+setDescription("The hibachi is a device that allows for sustained fire, and is activated with a redstone signal. It is also necessary to obtain a stoked fire with a bellow.")
+
+addParent("primitivetechnology:Bronze Age/bronze_tools")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:hibachi>)
+
+setPos(137,-77)
+
+alwaysVisible()

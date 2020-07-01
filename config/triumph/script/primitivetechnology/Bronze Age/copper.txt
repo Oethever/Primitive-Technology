@@ -13,3 +13,4 @@ criteria.addItem(<immersiveengineering:metal:0>)
 setPos(63,-109)
 
 alwaysVisible()
+setFrameType("GOAL")

@@ -13,3 +13,4 @@ criteria.addItem(<charcoal_pit:item_ash>)
 setPos(138,-33)
 
 alwaysVisible()
+setFrameType("GOAL")

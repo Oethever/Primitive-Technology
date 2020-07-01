@@ -1,0 +1,15 @@
+setIcon(<betterwithmods:single_machine:3>)
+
+setTitle("Turntable")
+
+setDescription("The turntable is used to make larger pottery vessels, such as the crucible. It can also rotate blocks placed upon it.")
+
+addParent("primitivetechnology:Bronze Age/mech_power")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<betterwithmods:single_machine:3>)
+
+setPos(223,-50)
+
+alwaysVisible()

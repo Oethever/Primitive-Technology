@@ -13,3 +13,4 @@ criteria.addItem(<notreepunching:flint_shard>)
 setPos(-23,0)
 
 alwaysVisible()
+setFrameType("GOAL")

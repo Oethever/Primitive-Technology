@@ -1,15 +1,15 @@
-setIcon(<minecraft:iron_ingot>)
+setIcon(<immersiveengineering:stone_device:1>)
 
 setTitle("Blast Furnace")
 
-setDescription("You can now smelt iron in the bloomery.")
+setDescription("The blast furnace is a furnace with even higher temperature than the bloomery, and is used to create steel from iron and coal coke. Place 27 blast brick blocks in a 3x3x3 shape, and right-click with the engineer hammer on the middle block. This multiblock has a GUI like the coke oven, simply place iron ingots and coal coke in it. Charcoal can be used, but is 4 times less efficient than coal coke. You obtain steel, and slag as a byproduct. It also works with whole blocks (a block of iron and a block of coal coke) at a time.")
 
 addParent("primitivetechnology:Iron Age/iron")
 
-criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+criteria = addCriteria("formed", "immersiveengineering:multiblock_formed")
+criteria.setMultiblock("IE:BlastFurnace")
 
-criteria.addItem(<minecraft:iron_ingot>)
-
-setPos(123,0)
+setPos(121,0)
 
 alwaysVisible()
+setFrameType("GOAL")

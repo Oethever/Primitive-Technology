@@ -12,7 +12,9 @@ val missingCrusherRecipes = {
 	<minecraft:skull:1>: <minecraft:dye:15> * 10,
 	<ore:netherrack>: <betterwithmods:material:15>,
 	<ore:sugarcane>: <minecraft:sugar> * 2,
-	<ore:cropHemp>: <betterwithmods:material:3> * 3
+	<ore:cropHemp>: <betterwithmods:material:3> * 3,
+	<ore:plankWood>: <betterwithmods:material:22> * 4,
+	<ore:logWood>: <betterwithmods:material:22> * 20
 } as IItemStack[IIngredient];
 
 for input, output in missingCrusherRecipes {
@@ -40,7 +42,9 @@ val missingMillStoneRecipes = {
 	<ore:oreEmerald>: <minecraft:emerald> * 1,
 	<ore:oreQuartz>: <minecraft:quartz> * 2,
 	<ore:oreCoal>: <minecraft:coal:0> * 3,
-	<ore:gemPrismarine>: <minecraft:prismarine_crystals>
+	<ore:gemPrismarine>: <minecraft:prismarine_crystals>,
+	<ore:plankWood>: <betterwithmods:material:22> * 4,
+	<ore:logWood>: <betterwithmods:material:22> * 20
 } as IItemStack[IIngredient];
 
 for input, output in missingMillStoneRecipes {
@@ -75,7 +79,8 @@ val missingGrindStoneRecipes = {
 	<ore:netherrack>: <betterwithmods:material:15>,
 	<ore:cropHemp>: <betterwithmods:material:3> * 3,
 	<ore:leather>: <betterwithmods:material:7>,
-	
+	<ore:plankWood>: <betterwithmods:material:22> * 4,
+	<ore:logWood>: <betterwithmods:material:22> * 20,
 	<ore:cropWheat>: <betterwithmods:raw_pastry:3>,
 	<ore:sugarcane>: <minecraft:sugar>
 } as IItemStack[IIngredient];

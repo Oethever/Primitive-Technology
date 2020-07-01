@@ -10,6 +10,6 @@ criteria = addCriteria("hasItem", "minecraft:inventory_changed")
 
 criteria.addItem(<minecraft:lead>)
 
-setPos(39,52)
+setPos(39,31)
 
 alwaysVisible()

@@ -1,0 +1,15 @@
+setIcon(<minecraft:chest_minecart>)
+
+setTitle("Minecarts with Chest")
+
+setDescription("Minecarts with chest are an efficient way to transport large amounts of blocks (indeed, you can put blocks in a minecart chest).")
+
+addParent("primitivetechnology:Iron Age/iron")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:chest_minecart>)
+
+setPos(121,31)
+
+alwaysVisible()

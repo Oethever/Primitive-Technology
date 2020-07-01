@@ -1,0 +1,15 @@
+setIcon(<tconstruct:tooltables:5>)
+
+setTitle("Part chest")
+
+setDescription("The part chest is very useful to store tool parts.")
+
+addParent("primitivetechnology:Stone Age/upgrade")
+
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+criteria.addItem(<tconstruct:tooltables:5>)
+
+setPos(171,61)
+
+alwaysVisible()

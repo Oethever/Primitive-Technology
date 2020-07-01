@@ -8,18 +8,19 @@ addParent("primitivetechnology:Stone Age/wood")
 
 setRequirements("all")
 
-criteria = addCriteria("hasItem0", "minecraft:inventory_changed")
+criteria = addCriteria("Crafting Station", "minecraft:inventory_changed")
 criteria.addItem(<tconstruct:tooltables:0>)
 
-criteria = addCriteria("hasItem1", "minecraft:inventory_changed")
+criteria = addCriteria("Stencil Table", "minecraft:inventory_changed")
 criteria.addItem(<tconstruct:tooltables:1>)
 
-criteria = addCriteria("hasItem2", "minecraft:inventory_changed")
+criteria = addCriteria("Part Builder", "minecraft:inventory_changed")
 criteria.addItem(<tconstruct:tooltables:2>)
 
-criteria = addCriteria("hasItem3", "minecraft:inventory_changed")
+criteria = addCriteria("Tool Station", "minecraft:inventory_changed")
 criteria.addItem(<tconstruct:tooltables:3>)
 
 setPos(138,0)
 
 alwaysVisible()
+setFrameType("GOAL")

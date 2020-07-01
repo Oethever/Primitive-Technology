@@ -13,3 +13,4 @@ criteria.addItem(<charcoal_pit:clay_pot>)
 setPos(22,-30)
 
 alwaysVisible()
+setFrameType("GOAL")

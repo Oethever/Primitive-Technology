@@ -10,6 +10,6 @@ criteria = addCriteria("hasCharcoal", "minecraft:inventory_changed")
 
 criteria.addItem(<realistictorches:matchbox>)
 
-setPos(171,33)
+setPos(171,90)
 
 alwaysVisible()

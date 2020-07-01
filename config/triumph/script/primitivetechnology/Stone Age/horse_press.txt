@@ -1,8 +1,8 @@
 setIcon(<horsepower:press>)
 
-setTitle("Horse press")
+setTitle("Pressing matters")
 
-setDescription("The horse press has not many uses yet, you can press seeds into dirt and extract water from leaves.")
+setDescription("With a horse press, you can press sugar cane into paper, saw dust into compressed sawdust (which can be turned into charcoal later on), seeds into dirt and extract water from leaves.")
 
 addParent("primitivetechnology:Stone Age/lead")
 
@@ -10,6 +10,6 @@ criteria = addCriteria("hasItem", "minecraft:inventory_changed")
 
 criteria.addItem(<horsepower:press>)
 
-setPos(72,52)
+setPos(72,31)
 
 alwaysVisible()

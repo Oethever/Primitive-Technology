@@ -1,0 +1,14 @@
+setIcon(<immersiveengineering:stone_decoration>)
+
+setTitle("Improved Coke Oven")
+
+setDescription("The improved coke oven is an automatable version of the coke oven. See the Engineer's manual for building instructions (in the 'Immersive Tech' section). ")
+
+addParent("primitivetechnology:Iron Age/steel")
+
+criteria = addCriteria("formed", "immersiveengineering:multiblock_formed")
+criteria.setMultiblock("IE:ImprovedCokeOven")
+
+setPos(193,35)
+
+alwaysVisible()

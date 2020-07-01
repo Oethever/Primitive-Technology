@@ -1,0 +1,14 @@
+setIcon(<immersiveengineering:tool:0>)
+
+setTitle("Hammer Time")
+
+setDescription("The engineer's hammer is used to create Immersive Engineering multiblock structures.")
+
+addParent("primitivetechnology:Bronze Age/bronze_tools")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+criteria.addItem(<immersiveengineering:tool:0>)
+
+setPos(181,-248)
+
+alwaysVisible()

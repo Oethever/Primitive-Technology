@@ -13,3 +13,4 @@ criteria.addItem(<minecraft:iron_ingot>)
 setPos(83,0)
 
 alwaysVisible()
+setFrameType("GOAL")

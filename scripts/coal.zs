@@ -29,5 +29,8 @@ mods.jei.JEI.removeAndHide(<thermalfoundation:material:768>);
 recipes.remove(<chisel:block_charcoal2:1>);
 
 // Merge Chisel and Charcoal Pit coal coke block OreDict entries
-<ore:blockCoalCoke>.addAll(<ore:blockCoke>);
-<ore:blockCoke>.addAll(<ore:blockCoalCoke>);
+<ore:blockFuelCoke>.addAll(<ore:blockCoke>);
+<ore:blockCoke>.addAll(<ore:blockFuelCoke>);
+
+// Add Charcoal Pit coke coal block to the blast furnace fuels
+mods.immersiveengineering.BlastFurnace.addFuel(<ore:blockCoke>, 12000);

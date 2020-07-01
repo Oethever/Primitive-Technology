@@ -10,6 +10,6 @@ criteria = addCriteria("hasItem", "minecraft:inventory_changed")
 
 criteria.addItem(<minecraft:stick>)
 
-setPos(105,33)
+setPos(105,90)
 
 alwaysVisible()

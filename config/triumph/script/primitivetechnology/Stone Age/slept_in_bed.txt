@@ -2,7 +2,7 @@ setIcon(<comforts:sleeping_bag>)
 
 setTitle("Good night!")
 
-setDescription("Use three Whool blocks to make a temporary bed, and sleep in it. If you can't find any sheep, you can also craft wool with some plant string.")
+setDescription("Use three whool blocks to make a temporary bed, and sleep in it. If you can't find any sheep, you can also craft wool with some plant string.")
 
 addParent("primitivetechnology:Stone Age/root")
 

@@ -1,0 +1,22 @@
+setIcon(<charcoal_pit:stone_creosote_collector>)
+
+setTitle("Creosote Oil Funnel")
+
+setDescription("Charcoal pits produce a byproduct that can be harvested with a specific device: the creosote oil funnel. It must be placed underneath the pit. It collects creosote oil in a cross-shaped area above it. Place a row of funnels across the length of your pit to maximize output. It produces 100 mB of oil per wood log, and thus 900 mB per log pile. You can collect the oil either with a bucket, or by placing a barrel underneath the funnel and giving a redstone signal to the funnel. A redstone-activated funnel will also collect oil from nearby funnels.")
+
+addParent("primitivetechnology:Bronze Age/root")
+
+setRequirements("any")
+
+criteria = addCriteria("Stone Brick Creosote Oil Funnel", "minecraft:inventory_changed")
+criteria.addItem(<charcoal_pit:stone_creosote_collector>)
+
+criteria = addCriteria("Brick Creosote Oil Funnel", "minecraft:inventory_changed")
+criteria.addItem(<charcoal_pit:brick_creosote_collector>)
+
+criteria = addCriteria("Netehr Brick Creosote Oil Funnel", "minecraft:inventory_changed")
+criteria.addItem(<charcoal_pit:nether_creosote_collector>)
+
+setPos(22,44)
+
+alwaysVisible()

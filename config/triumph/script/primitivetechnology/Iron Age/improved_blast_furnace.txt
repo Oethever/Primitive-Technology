@@ -1,0 +1,14 @@
+setIcon(<immersiveengineering:stone_device:2>)
+
+setTitle("Improved Blast Furnace")
+
+setDescription("The improved blast furnace is an automatable version of the blast furnace. See the Engineer's manual for building instructions (in the 'Heavy Machinery' section).")
+
+addParent("primitivetechnology:Iron Age/steel")
+
+criteria = addCriteria("formed", "immersiveengineering:multiblock_formed")
+criteria.setMultiblock("IE:ImprovedBlastFurnace")
+
+setPos(193,67)
+
+alwaysVisible()

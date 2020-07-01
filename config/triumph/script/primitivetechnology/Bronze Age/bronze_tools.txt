@@ -24,6 +24,7 @@ criteria.addItem(<tconstruct:tool_rod, nbt:{Material: "bronze"}>)
 criteria = addCriteria("hasItem4", "minecraft:inventory_changed")
 criteria.addItem(<tconstruct:binding, nbt:{Material: "bronze"}>)
 
-setPos(139,-166)
+setPos(137,-166)
 
 alwaysVisible()
+setFrameType("GOAL")

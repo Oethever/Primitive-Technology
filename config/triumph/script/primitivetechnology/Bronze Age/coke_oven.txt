@@ -1,15 +1,14 @@
-setIcon(<immersiveengineering:stone_decoration:0>)
+setIcon(<immersiveengineering:stone_device:0>)
 
 setTitle("Coke Oven")
 
-setDescription("The Coke Oven is a multiblock having the same function as the charcoal pit, but is easier to use. Create a 3x3x3 cube of Coke Bricks, and use the Engineer's Hammer on the central block.")
+setDescription("The Coke Oven is a multiblock having the same function as the charcoal pit, but is easier to use. Create a 3x3x3 cube of Coke Bricks, and use the Engineer's Hammer on the central block. You can collect the creosote oil directly from the interface with a bucket, instead of using a funnel.")
 
-addParent("primitivetechnology:Bronze Age/root")
+addParent("primitivetechnology:Bronze Age/engineers_hammer")
 
-criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+criteria = addCriteria("formed", "immersiveengineering:multiblock_formed")
+criteria.setMultiblock("IE:CokeOven")
 
-criteria.addItem(<immersiveengineering:stone_decoration:0>)
-
-setPos(22,44)
+setPos(223,-248)
 
 alwaysVisible()

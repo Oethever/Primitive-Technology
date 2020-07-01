@@ -1,6 +1,7 @@
 import crafttweaker.mods.ILoadedMods;
 import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
+import crafttweaker.player.IPlayer;
 
 // Returns all items that the given mod provides that match the
 // given ore dict entry.
@@ -34,4 +35,13 @@ function concatString(lhs as string[], rhs as string[]) as string[] {
 		result += value;
 	}
 	return result;
+}
+
+function giveItemStack(player as IPlayer, item as IItemStack) {
+	var i = 0;
+	val itemEntity = item.withAmount(1).createEntityItem(player.world, player.position.x, player.position.y, player.position.z);
+	while i < item.amount {
+		player.world.spawnEntity(itemEntity);
+		i += 1;
+	}
 }

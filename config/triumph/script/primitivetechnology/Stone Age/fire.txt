@@ -10,6 +10,6 @@ criteria = addCriteria("hasCharcoal", "minecraft:inventory_changed")
 
 criteria.addItem(<notreepunching:fire_starter>)
 
-setPos(138,33)
+setPos(138,90)
 
 alwaysVisible()

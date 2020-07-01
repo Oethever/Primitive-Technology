@@ -182,7 +182,6 @@ var liquidsToRemove = [
 	<liquid:lumium>,
 	<liquid:signalum>,
 	<liquid:manyullyn>,
-	<liquid:mithril>,
 	<liquid:knightslime>,
 	<liquid:ardite>,
 	<liquid:pigiron>,

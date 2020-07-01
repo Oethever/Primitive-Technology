@@ -14,3 +14,4 @@ criteria.addItem(<thermalfoundation:material:163>)
 setPos(103,-136)
 
 alwaysVisible()
+setFrameType("GOAL")

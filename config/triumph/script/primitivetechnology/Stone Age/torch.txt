@@ -2,7 +2,7 @@ setIcon(<minecraft:torch>)
 
 setTitle("Let there be torches!")
 
-setDescription("You can now create torches, but they need to be lit with a fire starter or a matchbox! And they will only last one hour (IRL time). Either light them once placed, or light them beforehand in a crafting grid.")
+setDescription("You can now create torches, but they need to be lit with a fire starter or a matchbox! And they will only last one hour (IRL time). Either light them once placed, or light them beforehand in a crafting grid (unfortunately, the crafting grid recipe works only with a matchbox).")
 
 addParent("primitivetechnology:Stone Age/charcoal")
 

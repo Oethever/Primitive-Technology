@@ -1,0 +1,15 @@
+setIcon(<minecraft:obsidian>)
+
+setTitle("Obsidian")
+
+setDescription("You can mine obsidian with a steel pickaxe.")
+
+addParent("primitivetechnology:Iron Age/steel")
+
+criteria = addCriteria("hasItem", "minecraft:inventory_changed")
+
+criteria.addItem(<minecraft:obsidian>)
+
+setPos(193,0)
+
+alwaysVisible()

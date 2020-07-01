@@ -10,6 +10,6 @@ criteria = addCriteria("hasItem", "minecraft:inventory_changed")
 
 criteria.addItem(<astikorcarts:mobcart>)
 
-setPos(224,-220)
+setPos(223,-220)
 
 alwaysVisible()

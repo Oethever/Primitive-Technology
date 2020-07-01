@@ -10,6 +10,6 @@ criteria = addCriteria("hasItem", "minecraft:inventory_changed")
 
 criteria.addItem(<betterwithmods:material:12>)
 
-setPos(257,-78)
+setPos(223,-109)
 
 alwaysVisible()

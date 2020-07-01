@@ -13,3 +13,4 @@ criteria.addItem(<minecraft:planks>)
 setPos(105,0)
 
 alwaysVisible()
+setFrameType("GOAL")
