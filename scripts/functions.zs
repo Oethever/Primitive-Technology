@@ -45,3 +45,11 @@ function giveItemStack(player as IPlayer, item as IItemStack) {
 		i += 1;
 	}
 }
+
+function filledClayBucket(fluidName as string) as IItemStack {
+	return <ceramics:clay_bucket:0>.withTag({fluids: {FluidName: fluidName, Amount: 1000}});
+}
+
+function filledIronBucket(fluidName as string) as IItemStack {
+	return <forge:bucketfilled>.withTag({fluids: {FluidName: fluidName, Amount: 1000}});
+}

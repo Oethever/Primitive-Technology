@@ -1,8 +1,18 @@
 import crafttweaker.data.IData;
+import crafttweaker.item.IItemStack;
 import mods.jei.JEI.removeAndHide;
+import scripts.functions.filledClayBucket;
+import scripts.functions.filledIronBucket;
 
-// This should be default
-//<ore:bricksStone>.addAll(<minecraft:stonebrick:*>);
+// Crafting station is made first, since crafting table is difficult to use with two slots only
+recipes.remove(<minecraft:crafting_table>);
+recipes.addShapeless(<minecraft:crafting_table>,
+	[<ore:workbench>]);
+
+recipes.remove(<tconstruct:tooltables:0>);
+recipes.addShaped(<tconstruct:tooltables:0>,
+ [[<ore:plankWood>, <ore:plankWood>],
+  [<ore:plankWood>, <ore:plankWood>]]);
 
 // Remove some items that are provided by multiple mods
 removeAndHide(<charcoal_pit:fire_starter>);
@@ -57,22 +67,77 @@ recipes.addShaped(<impstorage:controller_interface>,
 
 
 // Clay bucket should be usable where iron bucket is
-val clay_bucket_water = <ceramics:clay_bucket:0>.withTag({fluids: {FluidName: "water", Amount: 1000}});
+val liquidBuckets = [
+	[<minecraft:water_bucket>, filledClayBucket("water")],
+	[<minecraft:lava_bucket>, filledClayBucket("lava")],
+	[<minecraft:milk_bucket>, <ceramics:clay_bucket:1>],
+	[filledIronBucket("creosote"), filledClayBucket("creosote")],
+	[filledIronBucket("plantoil"), filledClayBucket("plantoil")]
+] as IItemStack[][];
 
-recipes.replaceAllOccurences(<minecraft:water_bucket>, clay_bucket_water | <minecraft:water_bucket>, <*>);
+for buckets in liquidBuckets {
+	recipes.replaceAllOccurences(buckets[0], buckets[0] | buckets[1], <*>);
+}
 
-recipes.replaceAllOccurences(<minecraft:bucket>, <ceramics:clay_bucket:0> | <minecraft:bucket>,
-	<charcoal_pit:stone_creosote_collector>  |
-	<charcoal_pit:brick_creosote_collector>  |
-	<charcoal_pit:nether_creosote_collector> |
-	<betterwithmods:bucket>);
-  
- 
+// Handle separately the empty bucket case, some recipes make sense only with iron bucket
+recipes.replaceAllOccurences(
+	// Replace ... 
+	<minecraft:bucket>,
+	// ... by ...
+	<ceramics:clay_bucket:0> | <minecraft:bucket>,
+	// ... in recipes ...
+	  <charcoal_pit:stone_creosote_collector>
+	| <charcoal_pit:brick_creosote_collector>
+	| <charcoal_pit:nether_creosote_collector>
+	| <betterwithmods:bucket>
+);
+
+// Add back some recipes that still won't show the clay bucket option
+recipes.addShaped(<immersiveengineering:metal_decoration0:7> * 2,
+	[[<ore:ingotSteel>,  <ore:ingotCopper>,         <ore:ingotSteel>],
+	 [<ore:ingotCopper>, filledClayBucket("water"), <ore:ingotCopper>],
+	 [<ore:ingotSteel>,  <ore:ingotCopper>,         <ore:ingotSteel>]]);
+
+recipes.addShaped(<immersiveengineering:stone_decoration:5> * 12,
+	[[<ore:itemSlag>, <ore:clay>,                <ore:itemSlag>],
+	 [<ore:gravel>,   filledClayBucket("water"), <ore:gravel>],
+	 [<ore:itemSlag>, <ore:clay>,                <ore:itemSlag>]]);
+
+recipes.addShaped(<immersiveengineering:stone_decoration:5> * 8,
+	[[<ore:sand>,   <ore:clay>,                <ore:sand>],
+	 [<ore:gravel>, filledClayBucket("water"), <ore:gravel>],
+	 [<ore:sand>,   <ore:clay>,                <ore:sand>]]);
+
+recipes.addShaped(<immersiveengineering:treated_wood:0> * 8,
+	[[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	 [<ore:plankWood>, filledClayBucket("creosote"), <ore:plankWood>],
+	 [<ore:plankWood>, <ore:plankWood>, <ore:plankWood>]]);
+	 
+recipes.addShaped(<immersiveengineering:wirecoil:7> * 4,
+	[[<ore:fabricHemp>, <immersiveengineering:wirecoil:1>, <ore:fabricHemp>],
+	 [<immersiveengineering:wirecoil:1>, filledClayBucket("creosote"), <immersiveengineering:wirecoil:1>],
+	 [<ore:fabricHemp>, <immersiveengineering:wirecoil:1>, <ore:fabricHemp>]]);
+
+recipes.addShaped(<immersiveengineering:toolupgrade:1>,
+	[[filledClayBucket("plantoil"), <ore:ingotIron>, null],
+	 [<ore:ingotIron>, filledClayBucket("plantoil"), <ore:ingotIron>],
+	 [null, <ore:ingotIron>, <immersiveengineering:material:8>]]);
+
 // Allow to use bronze instead of iron for some early recipes
-recipes.replaceAllOccurences(<ore:ingotIron>, <ore:ingotCopper> | <ore:ingotIron> | <ore:ingotBronze>,
+recipes.replaceAllOccurences(
+	// Replace ... 
+	<ore:ingotIron>,
+	// ... by ...
+	<ore:ingotCopper> | <ore:ingotIron> | <ore:ingotBronze>,
+	// ... in recipes ...
 	<betterwithmods:cooking_pot:1>); 
 
-recipes.replaceAllOccurences(<ore:ingotIron>, <ore:ingotBronze> | <ore:ingotIron>,
+recipes.replaceAllOccurences(
+	// Replace ... 
+	<ore:ingotIron>,
+	// ... by ...
+	<ore:ingotBronze> | <ore:ingotIron>,
+	// ... in recipes ...
 	  <betterwithmods:saw>
 	| <immersiveengineering:tool:0>
 	| <immersiveengineering:wooden_device1:0>
@@ -82,7 +147,7 @@ recipes.replaceAllOccurences(<ore:ingotIron>, <ore:ingotBronze> | <ore:ingotIron
 );
 
 
-// Add a recipe for lead without slime or glue
+// Add a recipe for the horse lead without slime or glue
 recipes.addShaped(<minecraft:lead> * 2,
 [[<ore:string>, <ore:string>,          null        ],
  [<ore:string>, <betterwithmods:rope>, null        ],
@@ -95,7 +160,10 @@ recipes.addShapeless(<dawnoftimebuilder:wax> * 10, [<minecraft:sugar>, <realisti
 mods.horsepower.Press.add(<ore:sugarcane> * 3, <minecraft:paper> * 6);
 mods.horsepower.Press.add(<dawnoftimebuilder:mulberry_leaves> * 3, <minecraft:paper> * 6);
 
-// CONFLICTS //
+
+/////////////////////////
+////// CONFLICTS ////////
+/////////////////////////
 
 // <tconstruct:rack:0> has the same recipe as <dawnoftimebuilder:oak_planks_edge>
 // and thus the latter changes to a recipes that conflicts with wooden pressure plate
