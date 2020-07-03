@@ -1,0 +1,23 @@
+// Vanilla files
+logs/
+mods/
+saves/
+crash-reports/
+knownkeys.txt
+options.txt
+optionsof.txt
+servers.dat
+usercache.json
+usernamecache.json
+manifest.json
+minecraftinstance.json
+
+// Folders/files from mods
+.mixin.out/
+bendspacks/
+shaderpacks/
+config/jei/
+config/waila/
+journeymap/
+modlist.html
+crafttweaker.log
