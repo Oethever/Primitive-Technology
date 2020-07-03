@@ -143,7 +143,8 @@ recipes.replaceAllOccurences(
 	| <immersiveengineering:wooden_device1:0>
 	| <immersiveengineering:wooden_device1:1>
 	| <bibliocraft:toolrack:*>
-	| <bibliocraft:framingsaw>
+	| <bibliocraft:furniturepaneler:*>
+	| <bibliocraft:handdrill>
 );
 
 

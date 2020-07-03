@@ -38,12 +38,8 @@ function concatString(lhs as string[], rhs as string[]) as string[] {
 }
 
 function giveItemStack(player as IPlayer, item as IItemStack) {
-	var i = 0;
-	val itemEntity = item.withAmount(1).createEntityItem(player.world, player.position.x, player.position.y, player.position.z);
-	while i < item.amount {
-		player.world.spawnEntity(itemEntity);
-		i += 1;
-	}
+	val itemEntity = item.createEntityItem(player.world, player.position.x, player.position.y, player.position.z);
+	player.world.spawnEntity(itemEntity);
 }
 
 function filledClayBucket(fluidName as string) as IItemStack {
