@@ -2,7 +2,7 @@ setIcon(<minecraft:lead>)
 
 setTitle("Your best friend")
 
-setDescription("Although you cannot ride horses without a saddle, you can still tame them and give them some work. Craft a lead with a few strings.")
+setDescription("Although you cannot ride horses without a saddle, you can still tame them and give them some work. Craft a lead with a few strings and a rope.")
 
 addParent("primitivetechnology:Stone Age/plant_fiber")
 

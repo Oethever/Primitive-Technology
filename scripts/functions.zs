@@ -37,11 +37,6 @@ function concatString(lhs as string[], rhs as string[]) as string[] {
 	return result;
 }
 
-function giveItemStack(player as IPlayer, item as IItemStack) {
-	val itemEntity = item.createEntityItem(player.world, player.position.x, player.position.y, player.position.z);
-	player.world.spawnEntity(itemEntity);
-}
-
 function filledClayBucket(fluidName as string) as IItemStack {
 	return <ceramics:clay_bucket:0>.withTag({fluids: {FluidName: fluidName, Amount: 1000}});
 }

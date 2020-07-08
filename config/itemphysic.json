@@ -1,9 +1,9 @@
 {
   "general": {
-    "despawnItem": 72000,
+    "despawnItem": 12000,
     "customThrow": true,
     "fallSounds": true,
-    "enableIgniting": false,
+    "enableIgniting": true,
     "swimmingItems": {
       "entries": [
         "{material:\"minecraft:planks\",count:1,id:\"material\"}",

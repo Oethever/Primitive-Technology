@@ -14,29 +14,32 @@ recipes.addShaped(<tconstruct:tooltables:0>,
  [[<ore:plankWood>, <ore:plankWood>],
   [<ore:plankWood>, <ore:plankWood>]]);
 
-// Remove some items that are provided by multiple mods
-removeAndHide(<charcoal_pit:fire_starter>);
-removeAndHide(<betterwithmods:axle_generator>);
-removeAndHide(<betterwithmods:axle_generator:2>);
-removeAndHide(<betterwithmods:material:11>);
-removeAndHide(<betterwithmods:axle_generator:1>);
-
-// Remove IE steel tools
-// We do not remove hoe and shovel because they can be used in the hoe cart
-removeAndHide(<immersiveengineering:pickaxe_steel>);
-removeAndHide(<immersiveengineering:axe_steel>);
 
 // Melon on the chopping block only
 recipes.remove(<minecraft:melon>);
 mods.horsepower.ChoppingBlock.add(<minecraft:melon_block>, <minecraft:melon>, 1);
 
-// No nether needed for blast furnace
-recipes.remove(<immersiveengineering:stone_decoration:1>);
-recipes.addShaped(<immersiveengineering:stone_decoration:1> * 3,
-[[<ore:clay>,       <ore:ingotBrick>,                          <ore:clay>],
- [<ore:ingotBrick>, <immersiveengineering:stone_decoration:5>, <ore:ingotBrick>],
- [<ore:clay>,       <ore:ingotBrick>,                          <ore:clay>]]);
- 
+
+// Remove ConArm backpacks
+removeAndHide(<conarm:travel_sack>);
+removeAndHide(<conarm:travel_belt>);
+removeAndHide(<conarm:travel_belt_base>);
+removeAndHide(<conarm:travel_potion>);
+
+// Remove some TCon tools
+removeAndHide(<tconstruct:lumberaxe>);
+removeAndHide(<tconstruct:scythe>);
+removeAndHide(<tconstruct:excavator>);
+removeAndHide(<tconstruct:hammer>);
+
+// Remove dye recipe from Inspirations flowers
+recipes.removeByRecipeName("inspirations:building/flower/dye_pink");
+recipes.removeByRecipeName("inspirations:building/flower/dye_red");
+recipes.removeByRecipeName("inspirations:building/flower/dye_cyan");
+recipes.removeByRecipeName("inspirations:building/flower/dye_magenta");
+
+// Inspiration has the same stone rod already (and it looks better)
+mods.jei.JEI.removeAndHide(<tconstruct:stone_stick>);
  
 // Light torch with iron and flint, fire starter, or matchbox
 //recipes.remove(<realistictorches:torch_lit>);
@@ -45,11 +48,7 @@ recipes.addShaped(<immersiveengineering:stone_decoration:1> * 3,
 	[<realistictorches:torch_unlit>,
 	 <minecraft:flint_and_steel>.transformDamage()]
 );
-recipes.addShapeless(
-	<realistictorches:torch_lit>,
-	[<realistictorches:torch_unlit>,
-	 <notreepunching:fire_starter>.transformDamage()]
-);*/
+*/
 // Desactivated because the recipe does not work when the fire starter has nonzero damage :(
 
 
@@ -123,15 +122,8 @@ recipes.addShaped(<immersiveengineering:toolupgrade:1>,
 	 [<ore:ingotIron>, filledClayBucket("plantoil"), <ore:ingotIron>],
 	 [null, <ore:ingotIron>, <immersiveengineering:material:8>]]);
 
-// Allow to use bronze instead of iron for some early recipes
-recipes.replaceAllOccurences(
-	// Replace ... 
-	<ore:ingotIron>,
-	// ... by ...
-	<ore:ingotCopper> | <ore:ingotIron> | <ore:ingotBronze>,
-	// ... in recipes ...
-	<betterwithmods:cooking_pot:1>); 
 
+// Allow to use bronze instead of iron for some early recipes
 recipes.replaceAllOccurences(
 	// Replace ... 
 	<ore:ingotIron>,
@@ -148,73 +140,8 @@ recipes.replaceAllOccurences(
 );
 
 
-// Add a recipe for the horse lead without slime or glue
-recipes.addShaped(<minecraft:lead> * 2,
-[[<ore:string>, <ore:string>,          null        ],
- [<ore:string>, <betterwithmods:rope>, null        ],
- [null,         null,                  <ore:string>]]);
-
-
 recipes.addShapeless(<dawnoftimebuilder:wax> * 10, [<minecraft:sugar>, <realistictorches:torch_lit>]);
 
 // Press paper recipes
 mods.horsepower.Press.add(<ore:sugarcane> * 3, <minecraft:paper> * 6);
 mods.horsepower.Press.add(<dawnoftimebuilder:mulberry_leaves> * 3, <minecraft:paper> * 6);
-
-
-/////////////////////////
-////// CONFLICTS ////////
-/////////////////////////
-
-// <tconstruct:rack:0> has the same recipe as <dawnoftimebuilder:oak_planks_edge>
-// and thus the latter changes to a recipes that conflicts with wooden pressure plate
-recipes.remove(<dawnoftimebuilder:oak_planks_edge>);
-recipes.addShaped(<dawnoftimebuilder:oak_planks_edge>,
-[[<minecraft:wooden_slab:0>, null, <minecraft:wooden_slab:0>]]);
-
-recipes.remove(<dawnoftimebuilder:oak_waxed_planks_edge>);
-recipes.addShaped(<dawnoftimebuilder:oak_waxed_planks_edge>,
-[[<dawnoftimebuilder:oak_waxed_planks_slab>, null, <dawnoftimebuilder:oak_waxed_planks_slab>]]);
-
-recipes.remove(<dawnoftimebuilder:spruce_planks_edge>);
-recipes.addShaped(<dawnoftimebuilder:spruce_planks_edge>,
-[[<minecraft:wooden_slab:1>, null, <minecraft:wooden_slab:1>]]);
-
-// Inspiration has the same stone rod already (and it looks better)
-removeAndHide(<tconstruct:stone_stick>);
-
-// Spruce support slab
-recipes.remove(<dawnoftimebuilder:spruce_support_slab>);
-recipes.addShaped(<dawnoftimebuilder:spruce_support_slab> * 12,
-[[<minecraft:wooden_slab:1>, <minecraft:wooden_slab:1>, <minecraft:wooden_slab:1>],
- [null, null, null],
- [<minecraft:wooden_slab:1>, <minecraft:wooden_slab:1>, <minecraft:wooden_slab:1>]]);
-
-// Oak support slab
-recipes.remove(<dawnoftimebuilder:oak_support_slab>);
-recipes.addShaped(<dawnoftimebuilder:oak_support_slab> * 12,
-[[<dawnoftimebuilder:oak_waxed_planks_slab>, <dawnoftimebuilder:oak_waxed_planks_slab>, <dawnoftimebuilder:oak_waxed_planks_slab>],
- [null, null, null],
- [<dawnoftimebuilder:oak_waxed_planks_slab>, <dawnoftimebuilder:oak_waxed_planks_slab>, <dawnoftimebuilder:oak_waxed_planks_slab>]]);
-
-// Spruce roof support
-recipes.remove(<dawnoftimebuilder:spruce_roof_support>);
-recipes.addShaped(<dawnoftimebuilder:spruce_roof_support> * 6,
-[[<minecraft:planks:1>, null,                 <minecraft:planks:1>],
- [<minecraft:planks:1>, null,                 <minecraft:planks:1>],
- [<minecraft:planks:1>, <minecraft:planks:1>, <minecraft:planks:1>]]);
- 
-// Dawn of time builder edition has a built-in conflict, yay
-recipes.remove(<dawnoftimebuilder:tatami_mat>);
-recipes.addShaped(<dawnoftimebuilder:tatami_mat> * 4,
-	[[<dawnoftimebuilder:thatch_bamboo>, <dawnoftimebuilder:thatch_bamboo>, <dawnoftimebuilder:thatch_bamboo>],
-	[<dawnoftimebuilder:thatch_bamboo>, <dawnoftimebuilder:thatch_bamboo>, <dawnoftimebuilder:thatch_bamboo>]]);
- 
-// Tachi sword is removed by tinker hegemony
-recipes.addShaped(<dawnoftimebuilder:tachi_sword>,
-	[[null, null, <ore:ingotIron>],
-	 [<ore:ingotGold>, <ore:ingotIron>, null],
-	 [<minecraft:planks:1>, <ore:ingotGold>, null]]);
-
-// Diamon ingot ???
-removeAndHide(<betterwithmods:material:45>);

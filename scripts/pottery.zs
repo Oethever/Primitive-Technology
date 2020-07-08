@@ -1,63 +1,57 @@
+import crafttweaker.item.IItemStack;
+
 // Clay flower pot had a conflicting recipe 
 recipes.remove(<charcoal_pit:clay_flowerpot>);
 recipes.addShaped(<charcoal_pit:clay_flowerpot>, [[<ore:clay>], [<ore:clay>]]);
 
-mods.notreepunching.FirePit.remove(<notreepunching:pottery/large_vessel>);
-mods.notreepunching.FirePit.remove(<notreepunching:pottery/small_vessel>);
-mods.notreepunching.FirePit.remove(<notreepunching:pottery/flower_pot>);
-mods.notreepunching.FirePit.remove(<notreepunching:pottery/bucket>);
-mods.notreepunching.FirePit.remove(<minecraft:brick>);
+val potteryBlocks = [
+	[<ceramics:clay_barrel_unfired>,     <ceramics:clay_barrel>],
+	[<ceramics:clay_barrel_unfired:1>,   <ceramics:clay_barrel:1>],
+	[<ceramics:clay_barrel_unfired:2>,   <ceramics:porcelain_barrel>],
+	[<ceramics:clay_barrel_unfired:3>,   <ceramics:porcelain_barrel_extension>],
+	[<ceramics:clay_soft>,               <ceramics:porcelain>],
+	[<charcoal_pit:clay_pot>,            <charcoal_pit:ceramic_pot>],
+	[<betterwithmods:unfired_pottery>,   <betterwithmods:cooking_pot>],
+	[<betterwithmods:unfired_pottery:1>, <betterwithmods:planter>],
+	[<betterwithmods:unfired_pottery:2>, <betterwithmods:urn>],
+	[<betterwithmods:unfired_pottery:3>, <betterwithmods:vase>],
+	[<betterwithmods:unfired_pottery:4>, <minecraft:brick>],
+	[<betterwithmods:unfired_pottery:5>, <minecraft:netherbrick>],
+	[<minecraft:clay>,                   <minecraft:hardened_clay>],
+	[<minecraft:brick_block>,            <ceramics:clay_hard:1>],
+	[<ceramics:clay_wall:0>,             <ceramics:clay_wall:2>],
+	[<minecraft:stone_slab:4>,           <ceramics:clay_slab:1>]
+] as IItemStack[][];
 
-furnace.remove(<ceramics:clay_barrel>);
-furnace.remove(<ceramics:clay_barrel:1>);
-furnace.remove(<ceramics:porcelain_barrel_extension>);
-furnace.remove(<ceramics:porcelain_barrel>);
-furnace.remove(<ceramics:porcelain>);
-furnace.remove(<ceramics:faucet>);
-furnace.remove(<ceramics:channel>);
-furnace.remove(<ceramics:clay_bucket>);
-furnace.remove(<ceramics:unfired_clay:5>);
-furnace.remove(<ceramics:unfired_clay:9>);
-furnace.remove(<ceramics:clay_shears>);
-furnace.remove(<notreepunching:ceramic_small_vessel>);
-furnace.remove(<notreepunching:ceramic_large_vessel>);
-furnace.remove(<notreepunching:ceramic_bucket>);
-furnace.remove(<minecraft:flower_pot>);
-furnace.remove(<minecraft:brick>);
-furnace.remove(<minecraft:hardened_clay>);
+val potteryItems = [
+	[<ceramics:unfired_clay>,            <ceramics:clay_bucket>],
+	[<ceramics:unfired_clay:1>,          <ceramics:clay_shears>],
+	[<ceramics:unfired_clay:4>,          <ceramics:unfired_clay:5>],
+	[<ceramics:unfired_clay:6>,          <ceramics:faucet>],
+	[<ceramics:unfired_clay:7>,          <ceramics:channel>],
+	[<ceramics:unfired_clay:8>,          <ceramics:unfired_clay:9>],
+	[<charcoal_pit:clay_flowerpot>,      <minecraft:flower_pot>],
+	[<minecraft:clay_ball>,              <minecraft:brick>],
+	[<betterwithmods:material:35>,       <minecraft:netherbrick>],
+	[<dawnoftimebuilder:grey_clay_tile>, <dawnoftimebuilder:grey_tile>]
+] as IItemStack[][];
 
-recipes.remove(<notreepunching:clay_brick>);
-recipes.remove(<notreepunching:clay_tool>);
 
-mods.jei.JEI.removeAndHide(<notreepunching:pottery/flower_pot>);
-mods.jei.JEI.removeAndHide(<notreepunching:pottery/large_vessel>);
-mods.jei.JEI.removeAndHide(<notreepunching:pottery/bucket>);
-mods.jei.JEI.removeAndHide(<notreepunching:ceramic_large_vessel>);
-mods.jei.JEI.removeAndHide(<notreepunching:ceramic_bucket>);
-mods.jei.JEI.removeAndHide(<notreepunching:clay_tool>);
-mods.jei.JEI.removeAndHide(<notreepunching:clay_brick>);
+mods.betterwithmods.Kiln.removeAll();
+mods.charcoalpit.flushKilnRecipes();
 
-mods.charcoalpit.addKilnRecipe(<ceramics:clay_barrel_unfired>, <ceramics:clay_barrel>);
-mods.charcoalpit.addKilnRecipe(<ceramics:clay_barrel_unfired:1>, <ceramics:clay_barrel:1>);
-mods.charcoalpit.addKilnRecipe(<ceramics:clay_barrel_unfired:3>, <ceramics:porcelain_barrel_extension>);
-mods.charcoalpit.addKilnRecipe(<ceramics:clay_barrel_unfired:2>, <ceramics:porcelain_barrel>);
-mods.charcoalpit.addKilnRecipe(<ceramics:unfired_clay:6>, <ceramics:faucet>);
-mods.charcoalpit.addKilnRecipe(<ceramics:unfired_clay:7>, <ceramics:channel>);
-mods.charcoalpit.addKilnRecipe(<ceramics:unfired_clay>, <ceramics:clay_bucket>);
-mods.charcoalpit.addKilnRecipe(<ceramics:unfired_clay:1>, <ceramics:clay_shears>);
-mods.charcoalpit.addKilnRecipe(<ceramics:clay_soft>, <ceramics:porcelain>);
-mods.charcoalpit.addKilnRecipe(<ceramics:unfired_clay:4>, <ceramics:unfired_clay:5>);
-mods.charcoalpit.addKilnRecipe(<ceramics:unfired_clay:8>, <ceramics:unfired_clay:9>);
-mods.charcoalpit.addKilnRecipe(<betterwithmods:unfired_pottery>, <betterwithmods:cooking_pot>);
-mods.charcoalpit.addKilnRecipe(<betterwithmods:unfired_pottery:1>, <betterwithmods:planter>);
-mods.charcoalpit.addKilnRecipe(<betterwithmods:unfired_pottery:2>, <betterwithmods:urn>);
-mods.charcoalpit.addKilnRecipe(<betterwithmods:unfired_pottery:3>, <betterwithmods:vase>);
-mods.charcoalpit.addKilnRecipe(<betterwithmods:unfired_pottery:4>, <minecraft:brick>);
-mods.charcoalpit.addKilnRecipe(<betterwithmods:unfired_pottery:5>, <minecraft:netherbrick>);
-mods.charcoalpit.addKilnRecipe(<notreepunching:pottery/small_vessel>, <notreepunching:ceramic_small_vessel>);
-mods.betterwithmods.Kiln.add(<ceramics:clay_barrel_unfired>, [<ceramics:clay_barrel>]);
-mods.betterwithmods.Kiln.add(<ceramics:clay_barrel_unfired:1>, [<ceramics:clay_barrel:1>]);
-mods.betterwithmods.Kiln.add(<ceramics:clay_barrel_unfired:3>, [<ceramics:porcelain_barrel_extension>]);
-mods.betterwithmods.Kiln.add(<ceramics:clay_barrel_unfired:2>, [<ceramics:porcelain_barrel>]);
-mods.betterwithmods.Kiln.add(<ceramics:clay_soft>, [<ceramics:porcelain>]);
-mods.betterwithmods.Kiln.add(<charcoal_pit:clay_pot>, [<charcoal_pit:ceramic_pot>]);
+
+for items in potteryBlocks {
+	val input = items[0];
+	val output = items[1];
+	furnace.remove(output);
+	mods.charcoalpit.addKilnRecipe(input, output);
+	mods.betterwithmods.Kiln.add(input, [output]);
+}
+
+for items in potteryItems {
+	val input = items[0];
+	val output = items[1];
+	furnace.remove(output);
+	mods.charcoalpit.addKilnRecipe(input, output);
+}
