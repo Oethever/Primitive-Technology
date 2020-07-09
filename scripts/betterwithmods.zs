@@ -19,13 +19,6 @@ removeAndHide(<betterwithmods:material:4>); // Hemp Cloth
 
 // Diamon ingot ???
 removeAndHide(<betterwithmods:material:45>);
-
-
-// Add a recipe for the horse lead without slime or glue
-recipes.addShaped(<minecraft:lead> * 2,
-	[[<ore:string>, <ore:string>,          null        ],
-	 [<ore:string>, <betterwithmods:rope>, null        ],
-	 [null,         null,                  <ore:string>]]);
  
 
 // Allow cauldron with copper or bronze as well
@@ -40,3 +33,17 @@ recipes.replaceAllOccurences(
 // Make rope a generic thing
 <ore:rope>.add(<betterwithmods:rope>, <inspirations:rope:0>, <inspirations:rope:2>);
 recipes.replaceAllOccurences(<betterwithmods:rope>, <ore:rope>, <*>);
+
+
+// Add a recipe for the horse lead without slime or glue
+recipes.addShaped(<minecraft:lead> * 2,
+	[[<ore:string>, <ore:string>, null        ],
+	 [<ore:string>, <ore:rope>,   null        ],
+	 [null,         null,         <ore:string>]]);
+
+// "Rope and nail" should be any rope and iron nuggets
+recipes.remove(<comforts:rope>);
+recipes.addShapedMirrored(<comforts:rope>, 
+	[[<ore:nuggetIron>, null,       null],
+	 [null,             <ore:rope>, null],
+	 [null,             null,       <ore:nuggetIron>]]);

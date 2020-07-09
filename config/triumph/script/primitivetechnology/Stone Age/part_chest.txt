@@ -10,6 +10,6 @@ addParent("primitivetechnology:Stone Age/upgrade")
 criteria = addCriteria("hasItem", "minecraft:inventory_changed")
 criteria.addItem(<tconstruct:tooltables:5>)
 
-setPos(171,61)
+setPos(171,60)
 
 alwaysVisible()

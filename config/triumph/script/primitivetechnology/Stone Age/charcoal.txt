@@ -13,4 +13,3 @@ criteria.addItem(<minecraft:coal>)
 setPos(171,0)
 
 alwaysVisible()
-setFrameType("GOAL")

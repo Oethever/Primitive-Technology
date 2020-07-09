@@ -1,0 +1,16 @@
+setIcon(<minecraft:book>)
+
+setTitle("Online help")
+
+setDescription("The bronze age is centered around Better With Mods. While the advancement texts should be enough to get you going, feel free to check out the mod wiki if you have trouble with some building: https://minecraftguides.net/BWM/")
+
+addParent("primitivetechnology:Bronze Age/root")
+
+setShowToast(false)
+
+setAnnounceToChat(false)
+
+setPos(22,-83)
+
+//Adds a single location criteria. Since this has nothing specific set, it will be completed the instant the player is added to the world, thus unlocking the page instantly.
+addCriteria("location", "minecraft:location")

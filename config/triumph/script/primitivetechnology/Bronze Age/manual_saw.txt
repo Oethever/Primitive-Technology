@@ -1,0 +1,31 @@
+setIcon(<notreepunching:saw/bronze>)
+
+setTitle("Manual saw")
+
+setDescription("The manual saw is an alternative to the axe that does not require the chopping block. Most importantly, it also produces sawdust and bark, the latter being an important ingredient for tanning leather.")
+
+addParent("primitivetechnology:Bronze Age/copper")
+
+setRequirements("any")
+
+criteria = addCriteria("hasItem0", "minecraft:inventory_changed")
+criteria.addItem(<notreepunching:saw/bronze>)
+
+criteria = addCriteria("hasItem1", "minecraft:inventory_changed")
+criteria.addItem(<notreepunching:saw/copper>)
+
+criteria = addCriteria("hasItem2", "minecraft:inventory_changed")
+criteria.addItem(<notreepunching:saw/iron>)
+
+criteria = addCriteria("hasItem3", "minecraft:inventory_changed")
+criteria.addItem(<notreepunching:saw/diamond>)
+
+criteria = addCriteria("hasItem4", "minecraft:inventory_changed")
+criteria.addItem(<notreepunching:saw/steel>)
+
+criteria = addCriteria("hasItem5", "minecraft:inventory_changed")
+criteria.addItem(<notreepunching:saw/gold>)
+
+setPos(103,-57)
+
+alwaysVisible()

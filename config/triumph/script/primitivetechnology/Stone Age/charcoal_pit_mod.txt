@@ -1,0 +1,16 @@
+setIcon(<minecraft:book>)
+
+setTitle("Online help")
+
+setDescription("The early game of this modpack is centered around the mod Charcoal Pit. While the advancement texts should be enough to get you going, feel free to check out the mod page if you have trouble with some building: https://www.curseforge.com/minecraft/mc-mods/charcoal-pit")
+
+addParent("primitivetechnology:Stone Age/root")
+
+setShowToast(false)
+
+setAnnounceToChat(false)
+
+setPos(-25,-33)
+
+//Adds a single location criteria. Since this has nothing specific set, it will be completed the instant the player is added to the world, thus unlocking the page instantly.
+addCriteria("location", "minecraft:location")

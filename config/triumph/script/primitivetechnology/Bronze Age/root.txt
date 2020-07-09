@@ -4,7 +4,7 @@ setTitle("Bronze Age")
 
 setDescription("Welcome to the Bronze Age!")
 
-setBackground("minecraft:textures/gui/advancements/backgrounds/adventure.png")
+setBackground("minecraft:textures/blocks/planks_birch.png")
 
 setShowToast(false)
 

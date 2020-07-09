@@ -1,4 +1,4 @@
-setIcon(<notreepunching:fire_starter>)
+setIcon(<charcoal_pit:fire_starter>)
 
 setTitle("Play with fire")
 
@@ -8,7 +8,7 @@ addParent("primitivetechnology:Stone Age/stick")
 
 criteria = addCriteria("hasCharcoal", "minecraft:inventory_changed")
 
-criteria.addItem(<notreepunching:fire_starter>)
+criteria.addItem(<charcoal_pit:fire_starter>)
 
 setPos(138,90)
 

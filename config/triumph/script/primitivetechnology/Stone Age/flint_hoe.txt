@@ -1,0 +1,15 @@
+setIcon(<notreepunching:hoe/flint>)
+
+setTitle("Stringy stuff")
+
+setDescription("The hoe is much more efficient to harvest plant fiber than with your bare hands. Craft it with a flint, some strings, and a stick.")
+
+addParent("primitivetechnology:Stone Age/plant_fiber")
+
+criteria = addCriteria("hasPlantFiber", "minecraft:inventory_changed")
+
+criteria.addItem(<notreepunching:hoe/flint>)
+
+setPos(39,-33)
+
+alwaysVisible()

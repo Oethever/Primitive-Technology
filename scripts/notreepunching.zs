@@ -36,14 +36,18 @@ mods.notreepunching.FirePit.remove(<notreepunching:pottery/flower_pot>);
 mods.notreepunching.FirePit.remove(<notreepunching:pottery/bucket>);
 mods.notreepunching.FirePit.remove(<notreepunching:clay_brick>);
 
+// Charcoal Pit' Straw is the main plant fiber
+recipes.replaceAllOccurences(<notreepunching:grass_fiber>, <charcoal_pit:straw>, <*>);
+<charcoal_pit:straw>.displayName = "Plant Fiber";
+
 // Since we removed the knifes, add plant fiber as grass drop
-vanilla.seeds.addSeed(<notreepunching:grass_fiber> % 20);
+vanilla.seeds.addSeed(<charcoal_pit:straw> % 20);
 
 // Also convert grass to plant fiber
-val anyFlower = <minecraft:red_flower:*> |
-	<minecraft:yellow_flower:*> |
-	<inspirations:flower>;
 // Separate the recipes, it is easier to understand for the player
-recipes.addShapeless(<notreepunching:grass_fiber> * 2, [<minecraft:tallgrass:*>]);
-recipes.addShapeless(<notreepunching:grass_fiber> * 2, [<minecraft:double_plant:*>]);
-recipes.addShapeless(<notreepunching:grass_fiber> * 2, [anyFlower]);
+recipes.addShapeless(<charcoal_pit:straw> * 2, [<minecraft:tallgrass:*>]);
+recipes.addShapeless(<charcoal_pit:straw> * 2, [<minecraft:double_plant:*>]);
+recipes.addShapeless(<charcoal_pit:straw> * 2,
+	[<minecraft:red_flower:*> |
+	 <minecraft:yellow_flower:*> |
+	 <inspirations:flower>]);

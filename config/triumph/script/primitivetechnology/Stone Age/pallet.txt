@@ -1,0 +1,31 @@
+setIcon(<realisticstorage:pallet_oak>)
+
+setTitle("Convenient storage")
+
+setDescription("The pallet is a simple block that greatly simplifies storage. It has only one effect: any block above it can be instantly mined by hand. You can thus store stone, wood, or dirt on pallets and harvest it quickly. Its area of effect is a 8 blocks column directly above it.")
+
+addParent("primitivetechnology:Stone Age/wood")
+
+setRequirements("any")
+
+criteria = addCriteria("hasItem0", "minecraft:inventory_changed")
+criteria.addItem(<realisticstorage:pallet_oak>)
+
+criteria = addCriteria("hasItem1", "minecraft:inventory_changed")
+criteria.addItem(<realisticstorage:pallet_spruce>)
+
+criteria = addCriteria("hasItem2", "minecraft:inventory_changed")
+criteria.addItem(<realisticstorage:pallet_acacia>)
+
+criteria = addCriteria("hasItem3", "minecraft:inventory_changed")
+criteria.addItem(<realisticstorage:pallet_jungle>)
+
+criteria = addCriteria("hasItem4", "minecraft:inventory_changed")
+criteria.addItem(<realisticstorage:pallet_dark_oak>)
+
+criteria = addCriteria("hasItem5", "minecraft:inventory_changed")
+criteria.addItem(<realisticstorage:pallet_birch>)
+
+setPos(138,31)
+
+alwaysVisible()

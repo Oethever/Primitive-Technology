@@ -4,7 +4,7 @@ setTitle("Iron Age")
 
 setDescription("Welcome to the Iron Age!")
 
-setBackground("minecraft:textures/gui/advancements/backgrounds/adventure.png")
+setBackground("minecraft:textures/blocks/stonebrick.png")
 
 setShowToast(false)
 

@@ -8,6 +8,6 @@ addParent("primitivetechnology:Stone Age/root")
 
 criteria = addCriteria("slept_in_bed", "minecraft:slept_in_bed")
 
-setPos(-23,33)
+setPos(-23,31)
 
 alwaysVisible()
