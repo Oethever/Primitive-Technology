@@ -20,7 +20,8 @@ val materialsToRemove = [
 	"Pigiron",
 	"Ardite",
 	"Manyullyn",
-	"Knightslime"
+	"Knightslime",
+	"Cobalt"
 ] as string[];
 
 val materialsToKeep = [
@@ -36,8 +37,7 @@ val materialsToKeep = [
 	"Electrum",
 	"Constantan",
 	"Aluminum",
-	"Alubrass",
-	"Cobalt"
+	"Alubrass"
 ] as string[];
 
 val allMaterials = concatString(materialsToKeep, materialsToRemove);
@@ -154,7 +154,6 @@ for alloy in easyAlloys {
 var oreToLiquids = {
 	<ore:oreIron>    : <liquid:iron>,
 	<ore:oreGold>    : <liquid:gold>,
-	<ore:oreCobalt>  : <liquid:cobalt>,
 	<ore:oreCopper>  : <liquid:copper>,
 	<ore:oreTin>     : <liquid:tin>,
 	<ore:oreLead>    : <liquid:lead>,
@@ -177,6 +176,7 @@ var liquidsToRemove = [
 	<liquid:zinc>,
 	<liquid:platinum>,
 	<liquid:invar>,
+	<liquid:cobalt>,
 	// These should definitely be removed
 	<liquid:enderium>,
 	<liquid:lumium>,

@@ -1,5 +1,6 @@
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
+import crafttweaker.item.IItemCondition;
 
 recipes.addShapeless(
 	"recipe1",
@@ -25,13 +26,12 @@ val barkPerLogSaw = 4;
 val stickPerPlankSaw = 12;
 val sawdustPerPlankSaw = 2;
 
-val sawTool = <ore:ticSaw> |
+val sawTool = (<ore:ticSaw> |
 	<betterwithmods:steel_hacksaw> |
 	<bibliocraft:framingsaw> |
-	<ore:toolSaw>;
+	<ore:toolSaw>).transformDamage();
 
-val axeTool = <ore:toolWeakAxe> |
-	<ore:toolMattock> |
+val axeTool = <notreepunching:axe/flint> |
 	<betterwithmods:steel_mattock> |
 	<tconstruct:mattock> |
 	<tconstruct:hatchet>;
@@ -78,7 +78,7 @@ for items in logPlanksBarks {
 	recipes.addShapeless(
 		"manual_saw_" ~ i,
 		planks * planksPerLogManual,
-		[log, sawTool.transformDamage()],
+		[log, sawTool],
 		// we have to specify this function
 		null,
 		// action to be performed after the craft
@@ -107,7 +107,7 @@ recipes.remove(<minecraft:stick>);
 recipes.addShapeless(
 	"manual_saw_stick",
 	<minecraft:stick> * stickPerPlankManual,
-	[<ore:plankWood>, sawTool.transformDamage()],
+	[<ore:plankWood>, sawTool],
 	// we have to specify this function
 	null,
 	// action to be performed after the craft
@@ -125,22 +125,25 @@ mods.betterwithmods.Saw.add(<ore:plankWood>, [<minecraft:stick> * stickPerPlankS
 recipes.remove(<horsepower:chopping_block>);
 i = 0;
 // Create a different recipe for each type of chopping block / log wood
-for logItem in <ore:logWood>.itemArray {
-	recipes.addShapeless(
-		"chopping_block_" ~ i,
-		<horsepower:chopping_block> * 2,
-		[logItem.marked("mark"), axeTool.transformDamage()],
-		function(output, inputs, craftInfo) {
-			return <horsepower:chopping_block>.withTag({
-				textureBlock: {
-					id: inputs.mark.definition.id,
-					Count: 1 as byte,
-					Damage: inputs.mark.metadata as short
-				}
-			}) * 2;
-		},
-		null);
-	i += 1;
+for logItem in <ore:logWood>. itemArray {
+	for axeToolItem in axeTool.itemArray {
+		recipes.addShapeless(
+			"chopping_block_" ~ i,
+			<horsepower:chopping_block> * 2,
+			[logItem.marked("mark"), axeToolItem.anyDamage().transformDamage()],
+			function(output, inputs, craftInfo) {
+				return <horsepower:chopping_block>.withTag({
+					textureBlock: {
+						id: inputs.mark.definition.id,
+						Count: 1 as byte,
+						Damage: inputs.mark.metadata as short
+					}
+				}) * 2;
+			},
+			null
+		);
+		i += 1;
+	}
 }
 
 // Compressed sawdust
@@ -152,4 +155,4 @@ mods.immersiveengineering.CokeOven.addRecipe(<minecraft:coal:1>, 250, compressed
 
 // Framing sheet (conflict with stick recipe)
 recipes.remove(<bibliocraft:framingsheet>);
-recipes.addShapeless(<bibliocraft:framingsheet> * 4, [<ore:plankWood>, <ore:plankWood>, sawTool.transformDamage()]);
+recipes.addShapeless(<bibliocraft:framingsheet> * 4, [<ore:plankWood>, <ore:plankWood>, sawTool]);
